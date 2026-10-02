@@ -1,0 +1,11 @@
+Class,Folder,Images,Non-image files,Nested copy files,Nested names identical,Percent
+Bacterial Spot,Tomato_Bacterial_spot,2127,0,2127,True,13.28
+Early Blight,Tomato_Early_blight,1000,0,1000,True,6.25
+Late Blight,Tomato_Late_blight,1909,0,1909,True,11.92
+Leaf Mold,Tomato_Leaf_Mold,952,0,952,True,5.95
+Septoria Leaf Spot,Tomato_Septoria_leaf_spot,1771,0,1771,True,11.06
+Spider Mites,Tomato_Spider_mites_Two_spotted_spider_mite,1676,0,1676,True,10.47
+Target Spot,Tomato__Target_Spot,1404,0,1404,True,8.77
+Yellow Leaf Curl Virus,Tomato__Tomato_YellowLeaf__Curl_Virus,3208,1,3209,True,20.04
+Tomato Mosaic Virus,Tomato__Tomato_mosaic_virus,373,0,373,True,2.33
+Healthy,Tomato_healthy,1591,0,1591,True,9.94
