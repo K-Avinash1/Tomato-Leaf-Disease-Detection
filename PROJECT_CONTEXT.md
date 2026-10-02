@@ -1,8 +1,8 @@
 # Project Context
 
 **Project:** Tomato Leaf Disease Detection and Treatment Recommendation Using Deep Learning
-**Current phase:** Phase 1 (Environment and Project Setup), final verification
-**Completed phases:** none yet
+**Current phase:** Phase 2 (Dataset acquisition and verification)
+**Completed phases:** Phase 1
 **Random seed:** 42
 
 ## Environment
