@@ -1,0 +1,13 @@
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+data/raw/*
+data/processed/*
+data/external/*
+!data/**/.gitkeep
+models/*.pt
+models/*.pth
+.env
+.vscode/
+*.log
