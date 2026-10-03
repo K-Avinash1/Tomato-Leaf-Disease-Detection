@@ -1,0 +1,11 @@
+class,train,val,test,total,train_%,val_%,test_%
+Bacterial Spot,1488,319,320,2127,70.0,15.0,15.0
+Early Blight,700,150,150,1000,70.0,15.0,15.0
+Healthy,1108,238,239,1585,69.9,15.0,15.1
+Late Blight,1331,286,284,1901,70.0,15.0,14.9
+Leaf Mold,667,142,143,952,70.1,14.9,15.0
+Septoria Leaf Spot,1240,266,265,1771,70.0,15.0,15.0
+Spider Mites,1174,252,250,1676,70.0,15.0,14.9
+Target Spot,983,211,210,1404,70.0,15.0,15.0
+Tomato Mosaic Virus,260,56,57,373,69.7,15.0,15.3
+Yellow Leaf Curl Virus,2246,480,482,3208,70.0,15.0,15.0

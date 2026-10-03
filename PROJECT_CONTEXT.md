@@ -1,7 +1,7 @@
 # Project Context
 
 **Project:** Tomato Leaf Disease Detection and Treatment Recommendation Using Deep Learning
-**Current phase:** Phase 4 (Dataset splitting)
+**Current phase:** Phase 5 (Image preprocessing)
 **Completed phases:** Phases 1, 2 and 3 (EDA done, near-duplicate grouping to be applied in Phase 4)
 **Random seed:** 42
 
@@ -25,7 +25,7 @@ Bacterial Spot, Early Blight, Late Blight, Leaf Mold, Septoria Leaf Spot, Spider
 Custom CNN, ResNet-18, EfficientNet-B0, MobileNetV3
 
 ## Key findings
-None yet.
+Shortcut risk: 144 of 148 very dark (black-background) images are Late Blight (7.6% of that class). To be checked via per-subset evaluation (Phase 12/13) and Grad-CAM (Phase 19)
 
 ## Next phase
 Phase 2: Dataset acquisition and verification
