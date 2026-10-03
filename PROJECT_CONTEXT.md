@@ -1,8 +1,8 @@
 # Project Context
 
 **Project:** Tomato Leaf Disease Detection and Treatment Recommendation Using Deep Learning
-**Current phase:** Phase 2 (Dataset acquisition and verification)
-**Completed phases:** Phase 1
+**Current phase:** Phase 4 (Dataset splitting)
+**Completed phases:** Phases 1, 2 and 3 (EDA done, near-duplicate grouping to be applied in Phase 4)
 **Random seed:** 42
 
 ## Environment
@@ -12,9 +12,11 @@
 - Laptop: AMD Ryzen 5 7520U, 8 GB RAM
 
 ## Dataset
-- PlantVillage Tomato subset (Kaggle: emmarex/plantdisease)
-- Downloaded at `E:\PlantVillage`
-- Counts not yet measured (Phase 2)
+## Dataset
+- PlantVillage Tomato subset (Kaggle: emmarex/plantdisease), at `E:\PlantVillage` (outer tomato folders only)
+- Valid images: 16,011 (all 256x256, RGB, JPEG). Largest class 3,208 (Yellow Leaf Curl Virus), smallest 373 (Tomato Mosaic Virus), imbalance ratio 8.60
+- 1 corrupted file and 14 exact duplicate copies to be excluded
+- Per-class counts: reports/tables/dataset_summary.csv
 
 ## Locked classes (10)
 Bacterial Spot, Early Blight, Late Blight, Leaf Mold, Septoria Leaf Spot, Spider Mites, Target Spot, Yellow Leaf Curl Virus, Tomato Mosaic Virus, Healthy
