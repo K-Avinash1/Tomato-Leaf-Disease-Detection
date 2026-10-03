@@ -1,0 +1,12 @@
+class,raw_files,corrupted_removed,exact_duplicates_removed,clean_images,percent_of_clean,dark_images_brightness_lt60
+Yellow Leaf Curl Virus,3209.0,1.0,0.0,3208.0,20.05,1.0
+Bacterial Spot,2127.0,0.0,0.0,2127.0,13.3,0.0
+Late Blight,1909.0,0.0,8.0,1901.0,11.88,144.0
+Septoria Leaf Spot,1771.0,0.0,0.0,1771.0,11.07,0.0
+Spider Mites,1676.0,0.0,0.0,1676.0,10.48,1.0
+Healthy,1591.0,0.0,6.0,1585.0,9.91,0.0
+Target Spot,1404.0,0.0,0.0,1404.0,8.78,2.0
+Early Blight,1000.0,0.0,0.0,1000.0,6.25,0.0
+Leaf Mold,952.0,0.0,0.0,952.0,5.95,0.0
+Tomato Mosaic Virus,373.0,0.0,0.0,373.0,2.33,0.0
+TOTAL,16012.0,1.0,14.0,15997.0,100.0,148.0
