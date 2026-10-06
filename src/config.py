@@ -1,7 +1,9 @@
+import os
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-DATASET_ROOT = Path(r"E:\PlantVillage")
+# Local default is the E drive. On Colab we set TOMATO_DATA_ROOT to the unzipped data folder.
+DATASET_ROOT = Path(os.environ.get("TOMATO_DATA_ROOT", r"E:\PlantVillage"))
 INNER_ROOT = DATASET_ROOT / "PlantVillage"   # nested folder, checked for duplicates
 TABLES_DIR = PROJECT_ROOT / "reports" / "tables"
 
