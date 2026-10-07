@@ -1,0 +1,39 @@
+{
+  "exp_id": "TEST_local",
+  "model": "custom_cnn",
+  "epochs": 3,
+  "batch_size": 8,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "dropout": 0.3,
+  "class_weights": false,
+  "out_dir": "runs\\TEST_local",
+  "resume": true,
+  "max_batches": 3,
+  "seed": 42,
+  "device": "cpu",
+  "hardware": "CPU",
+  "img_size": 224,
+  "aug_config": {
+    "crop_scale": [
+      0.75,
+      1.0
+    ],
+    "crop_ratio": [
+      0.9,
+      1.1
+    ],
+    "hflip_p": 0.5,
+    "rot90": true,
+    "brightness": 0.2,
+    "contrast": 0.2,
+    "saturation": 0.1,
+    "hue": 0.0
+  },
+  "params": 2347178,
+  "python": "3.11.9",
+  "torch": "2.14.1+cpu",
+  "torchvision": "0.29.1+cpu",
+  "train_images": 11197,
+  "val_images": 2400
+}
