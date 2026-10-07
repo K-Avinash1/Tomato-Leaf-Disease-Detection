@@ -11,4 +11,4 @@ models/*.pth
 .env
 .vscode/
 *.log
-   runs/
+runs/
