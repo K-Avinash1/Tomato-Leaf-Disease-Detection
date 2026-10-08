@@ -1,0 +1,117 @@
+{
+  "exp_id": "E002_resnet18",
+  "evaluated_on": "validation",
+  "best_epoch": 18,
+  "train_seconds": 1320.9782354831696,
+  "params": 11181642,
+  "checkpoint_mb": 44.807371,
+  "hardware": "Tesla T4",
+  "plan": [
+    [
+      "A_head",
+      "head",
+      5,
+      0.001
+    ],
+    [
+      "B_partial",
+      "partial",
+      15,
+      0.0001
+    ]
+  ],
+  "stage_summary": {
+    "A_head": {
+      "best_epoch": 4,
+      "best_val_macro_f1": 0.835092714427704,
+      "last_epoch_val_macro_f1": 0.8282853655908285
+    },
+    "B_partial": {
+      "best_epoch": 18,
+      "best_val_macro_f1": 0.9867603266255612,
+      "last_epoch_val_macro_f1": 0.986392645849218
+    }
+  },
+  "metrics": {
+    "accuracy": 0.9883333333333333,
+    "macro_precision": 0.9858452095746456,
+    "macro_recall": 0.9877745836863815,
+    "macro_f1": 0.9867603266255612,
+    "weighted_f1": 0.9883763254058093
+  },
+  "per_class": {
+    "Bacterial Spot": {
+      "precision": 0.9968253968253968,
+      "recall": 0.9843260188087775,
+      "f1-score": 0.9905362776025236,
+      "support": 319.0
+    },
+    "Early Blight": {
+      "precision": 0.935064935064935,
+      "recall": 0.96,
+      "f1-score": 0.9473684210526315,
+      "support": 150.0
+    },
+    "Late Blight": {
+      "precision": 0.9788732394366197,
+      "recall": 0.972027972027972,
+      "f1-score": 0.9754385964912281,
+      "support": 286.0
+    },
+    "Leaf Mold": {
+      "precision": 0.986013986013986,
+      "recall": 0.9929577464788732,
+      "f1-score": 0.9894736842105263,
+      "support": 142.0
+    },
+    "Septoria Leaf Spot": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 266.0
+    },
+    "Spider Mites": {
+      "precision": 0.9960159362549801,
+      "recall": 0.9920634920634921,
+      "f1-score": 0.9940357852882704,
+      "support": 252.0
+    },
+    "Target Spot": {
+      "precision": 0.967741935483871,
+      "recall": 0.995260663507109,
+      "f1-score": 0.9813084112149533,
+      "support": 211.0
+    },
+    "Yellow Leaf Curl Virus": {
+      "precision": 0.9979166666666667,
+      "recall": 0.9979166666666667,
+      "f1-score": 0.9979166666666667,
+      "support": 480.0
+    },
+    "Tomato Mosaic Virus": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 56.0
+    },
+    "Healthy": {
+      "precision": 1.0,
+      "recall": 0.9831932773109243,
+      "f1-score": 0.9915254237288136,
+      "support": 238.0
+    },
+    "accuracy": 0.9883333333333333,
+    "macro avg": {
+      "precision": 0.9858452095746456,
+      "recall": 0.9877745836863815,
+      "f1-score": 0.9867603266255612,
+      "support": 2400.0
+    },
+    "weighted avg": {
+      "precision": 0.988503474443022,
+      "recall": 0.9883333333333333,
+      "f1-score": 0.9883763254058093,
+      "support": 2400.0
+    }
+  }
+}

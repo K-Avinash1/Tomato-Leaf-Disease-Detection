@@ -1,8 +1,8 @@
 # Project Context
 
 **Project:** Tomato Leaf Disease Detection and Treatment Recommendation Using Deep Learning
-**Current phase:** Phase 8 (Transfer learning)
-**Completed phases:** Phases 1 to 7
+**Current phase:** Phase 10 (Hyperparameter tuning)
+**Completed phases:** Phases 1 to 9
 **Random seed:** 42
 
 ## Environment
@@ -28,9 +28,11 @@ Custom CNN, ResNet-18, EfficientNet-B0, MobileNetV3
 ## Key findings
 Shortcut risk: 144 of 148 very dark (black-background) images are Late Blight (7.6% of that class). To be checked via per-subset evaluation (Phase 12/13) and Grad-CAM (Phase 19)
 
+
 Colab T4 benchmark at 224, batch 32, all layers (compute only): ResNet-18 about 0.6, EfficientNet-B0 about 0.8, MobileNetV3-Large about 0.5, MobileNetV3-Small about 0.2 min/epoch.
+
 
 E001 baseline custom CNN: val macro F1 0.9937, accuracy 0.9942, 2.35M params, 40.9 min on T4. Test set untouched.
 
-## Next phase
-Phase 2: Dataset acquisition and verification
+
+Validation macro F1: E001 custom CNN 0.9937 (14 errors), E002 ResNet-18 0.9868 (28), E003 EfficientNet-B0 0.9922 (17), E004 MobileNetV3-Large 0.9935 (14). Stage B fine-tuning gave +0.03 to +0.15 macro F1 over head-only. Validation is saturated, so differences among E001/E003/E004 are within noise. Early Blight is the hardest class for all models. Test set untouched
