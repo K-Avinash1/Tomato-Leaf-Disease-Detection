@@ -9,7 +9,6 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
-import pandas as pd
 import torch
 import torch.nn as nn
 import torchvision
@@ -18,11 +17,12 @@ from sklearn.metrics import (accuracy_score, classification_report, confusion_ma
 from torch.utils.data import DataLoader
 
 from src.data.dataset import CLASS_NAMES, TomatoDataset
-from src.models.factory import (PARTIAL_DESC, build_model, count_params, freeze_frozen_bn,
+from src.evaluation.calibration import nll_and_ece
+from src.models.factory import (UNFREEZE_DESC, build_model, count_params, freeze_frozen_bn,
                                 set_trainable, trainable_params)
-from src.preprocessing.transforms import (AUG_CONFIG, IMAGENET_MEAN, IMAGENET_STD, IMG_SIZE,
-                                          get_eval_transform, get_train_transform)
-from src.utils.seed import SEED, set_seed
+from src.preprocessing.transforms import (AUG_CONFIG, AUG_PRESETS, IMAGENET_MEAN, IMAGENET_STD,
+                                          IMG_SIZE, get_eval_transform, get_train_transform)
+from src.utils.seed import set_seed
 
 K = len(CLASS_NAMES)
 
@@ -38,6 +38,10 @@ def parse_args():
     ap.add_argument("--stage-b-epochs", type=int, default=15)
     ap.add_argument("--lr-a", type=float, default=1e-3)
     ap.add_argument("--lr-b", type=float, default=1e-4)
+    ap.add_argument("--unfreeze", default="partial", choices=["partial", "deep"])
+    ap.add_argument("--aug", default="default", choices=list(AUG_PRESETS))
+    ap.add_argument("--seed", type=int, default=42)
+    ap.add_argument("--objective", default=None)
     ap.add_argument("--batch-size", type=int, default=64)
     ap.add_argument("--weight-decay", type=float, default=1e-4)
     ap.add_argument("--dropout", type=float, default=0.3)
@@ -150,18 +154,19 @@ def build_plan(a):
     if strategy == "full":
         return strategy, [("full", "full", a.epochs, a.lr)]
     return strategy, [("A_head", "head", a.stage_a_epochs, a.lr_a),
-                      ("B_partial", "partial", a.stage_b_epochs, a.lr_b)]
+                      (f"B_{a.unfreeze}", a.unfreeze, a.stage_b_epochs, a.lr_b)]
 
 
 def main():
     a = parse_args()
-    set_seed()
+    set_seed(a.seed)
     device = "cuda" if torch.cuda.is_available() else "cpu"
     out = Path(a.out_dir or f"runs/{a.exp_id}")
     out.mkdir(parents=True, exist_ok=True)
     workers = 2 if device == "cuda" else 0
     strategy, plan = build_plan(a)
     total_epochs = sum(p[2] for p in plan)
+    aug_cfg = {**AUG_CONFIG, **AUG_PRESETS[a.aug]}
 
     def stage_index(ep):             # ep is the global epoch number, starting at 1
         left = ep
@@ -172,7 +177,7 @@ def main():
         return len(plan) - 1
 
     # Only train and validation are loaded here. The test split is never touched.
-    train_ds = TomatoDataset("train", get_train_transform())
+    train_ds = TomatoDataset("train", get_train_transform(cfg=AUG_PRESETS[a.aug]))
     val_ds = TomatoDataset("val", get_eval_transform())
     kw = dict(num_workers=workers, pin_memory=(device == "cuda"), persistent_workers=workers > 0)
     train_dl = DataLoader(train_ds, batch_size=a.batch_size, shuffle=True, **kw)
@@ -191,8 +196,8 @@ def main():
     hardware = torch.cuda.get_device_name(0) if device == "cuda" else "CPU"
     config = {**vars(a), "strategy_used": strategy, "plan": plan, "total_epochs": total_epochs,
               "pretrained_weights": "torchvision IMAGENET1K_V1" if pretrained else "none (from scratch)",
-              "seed": SEED, "device": device, "hardware": hardware, "img_size": IMG_SIZE,
-              "aug_config": AUG_CONFIG, "params": n_params, "python": platform.python_version(),
+              "device": device, "hardware": hardware, "img_size": IMG_SIZE,
+              "aug_config": aug_cfg, "params": n_params, "python": platform.python_version(),
               "torch": torch.__version__, "torchvision": torchvision.__version__,
               "train_images": len(train_ds), "val_images": len(val_ds)}
     (out / "config.json").write_text(json.dumps(config, indent=2))
@@ -247,7 +252,7 @@ def main():
                 "model_state": model.state_dict(), "model_name": a.model, "dropout": a.dropout,
                 "num_classes": K, "class_names": CLASS_NAMES, "img_size": IMG_SIZE,
                 "mean": IMAGENET_MEAN, "std": IMAGENET_STD, "val_macro_f1": best_f1,
-                "epoch": epoch, "stage": plan[idx][0], "exp_id": a.exp_id, "seed": SEED})
+                "epoch": epoch, "stage": plan[idx][0], "exp_id": a.exp_id, "seed": a.seed})
         save_checkpoint(last_path, {
             "model": model.state_dict(), "optimizer": optimizer.state_dict(),
             "scheduler": scheduler.state_dict(), "epoch": epoch, "stage_idx": idx,
@@ -266,6 +271,7 @@ def main():
     va_y = np.array(val_ds.labels[:n])
     va_p = logits.argmax(1)
     m = summary_metrics(va_y, va_p)
+    nll, ece = nll_and_ece(logits, va_y)
     report = classification_report(va_y, va_p, labels=list(range(K)), target_names=CLASS_NAMES,
                                    output_dict=True, zero_division=0)
     cm = confusion_matrix(va_y, va_p, labels=list(range(K)))
@@ -290,17 +296,23 @@ def main():
             b = max(rows, key=lambda h: h["val_macro_f1"])
             stage_summary[p[0]] = {"best_epoch": b["epoch"], "best_val_macro_f1": b["val_macro_f1"],
                                    "last_epoch_val_macro_f1": rows[-1]["val_macro_f1"]}
+    min_loss = min(history, key=lambda h: h["val_loss"])
     size_mb = best_path.stat().st_size / 1e6
-    result = {"exp_id": a.exp_id, "evaluated_on": "validation", "best_epoch": best_epoch,
-              "train_seconds": train_seconds, "params": n_params, "checkpoint_mb": size_mb,
-              "hardware": hardware, "plan": plan, "stage_summary": stage_summary,
-              "metrics": m, "per_class": report}
+    result = {"exp_id": a.exp_id, "evaluated_on": "validation", "seed": a.seed, "aug": a.aug,
+              "best_epoch": best_epoch, "train_seconds": train_seconds, "params": n_params,
+              "checkpoint_mb": size_mb, "hardware": hardware, "plan": plan,
+              "stage_summary": stage_summary, "metrics": m,
+              "calibration": {"val_nll": nll, "val_ece": ece},
+              "lowest_val_loss": {"value": min_loss["val_loss"], "epoch": min_loss["epoch"]},
+              "per_class": report}
     (out / "metrics_val.json").write_text(json.dumps(result, indent=2))
 
     print("\n=== Validation results (best checkpoint) ===")
     print(classification_report(va_y, va_p, labels=list(range(K)), target_names=CLASS_NAMES,
                                 digits=4, zero_division=0))
     print("Summary:", {k: round(v, 4) for k, v in m.items()})
+    print(f"Errors: {int((va_y != va_p).sum())} of {n} | NLL {nll:.4f} | ECE {ece:.4f} | "
+          f"lowest val loss during training {min_loss['val_loss']:.4f} (epoch {min_loss['epoch']})")
     for k, v in stage_summary.items():
         print(f"Stage {k}: best val macro-F1 {v['best_val_macro_f1']:.4f} (epoch {v['best_epoch']}), "
               f"last epoch {v['last_epoch_val_macro_f1']:.4f}")
@@ -309,23 +321,26 @@ def main():
 
     plan_text = "; ".join(f"{p[0]}: {p[2]} epochs, lr {p[3]}" for p in plan)
     unfrozen = ("all layers" if strategy == "full" else
-                f"stage A head only; stage B {PARTIAL_DESC.get(a.model, 'head + deepest blocks')}")
+                f"stage A head only; stage B {UNFREEZE_DESC[a.unfreeze].get(a.model, 'head + deepest blocks')}")
+    objective = a.objective or ("baseline custom CNN from scratch" if strategy == "full" else
+                                f"transfer learning: {a.model}, feature extraction then partial fine-tuning")
     print("\n--- EXPERIMENT_LOG entry (copy into EXPERIMENT_LOG.md, then fill Observations/Conclusion) ---")
     print(f"""
 ### {a.exp_id}
-- **Objective:** {'baseline custom CNN from scratch' if strategy == 'full' else 'transfer learning: ' + a.model + ', feature extraction then partial fine-tuning'}
+- **Objective:** {objective}
 - **Dataset version:** PlantVillage tomato, 15,997 clean images (clean_manifest.csv)
-- **Data split:** 70/15/15, seed {SEED}, stratified, near-duplicate-group-aware (train {len(train_ds)}, val {len(val_ds)}); test not used
+- **Data split:** 70/15/15, split seed 42, stratified, near-duplicate-group-aware (train {len(train_ds)}, val {len(val_ds)}); test not used
 - **Preprocessing:** resize {IMG_SIZE}x{IMG_SIZE}, ImageNet mean/std normalization
-- **Augmentation:** {AUG_CONFIG} (training only)
+- **Augmentation:** preset '{a.aug}': {aug_cfg} (training only)
 - **Model / architecture:** {a.model}, {config['pretrained_weights']}, {n_params:,} parameters
 - **Trainable layers:** {unfrozen}
 - **Optimizer / LR:** AdamW, weight decay {a.weight_decay}, cosine schedule per stage; {plan_text}
 - **Batch size / epochs:** {a.batch_size} / {total_epochs}
-- **Hyperparameters:** dropout {a.dropout}, class weights {'on' if a.class_weights else 'off'}
+- **Hyperparameters:** dropout {a.dropout}, class weights {'on' if a.class_weights else 'off'}, training seed {a.seed}
 - **Hardware:** {hardware} (PyTorch {torch.__version__}, Python {platform.python_version()})
 - **Training time:** {train_seconds / 60:.1f} min | checkpoint {size_mb:.1f} MB
-- **Validation (best epoch {best_epoch}):** accuracy {m['accuracy']:.4f}, macro precision {m['macro_precision']:.4f}, macro recall {m['macro_recall']:.4f}, macro F1 {m['macro_f1']:.4f}, weighted F1 {m['weighted_f1']:.4f}
+- **Validation (best epoch {best_epoch}):** accuracy {m['accuracy']:.4f}, macro precision {m['macro_precision']:.4f}, macro recall {m['macro_recall']:.4f}, macro F1 {m['macro_f1']:.4f}, weighted F1 {m['weighted_f1']:.4f} ({int((va_y != va_p).sum())} errors)
+- **Calibration (validation, best epoch):** NLL {nll:.4f}, ECE {ece:.4f}
 - **Stage results (best val macro F1):** {', '.join(f"{k} {v['best_val_macro_f1']:.4f}" for k, v in stage_summary.items())}
 - **Observations:** <fill in>
 - **Conclusion:** <fill in>

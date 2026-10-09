@@ -20,6 +20,12 @@ AUG_CONFIG = {
     "hue": 0.0,             # hue shifts could change symptom color, so none
 }
 
+# Named overrides on top of AUG_CONFIG (used for tuning experiments)
+AUG_PRESETS = {
+    "default": {},
+    "strong": {"crop_scale": (0.5, 1.0), "brightness": 0.3, "contrast": 0.3, "saturation": 0.2},
+}
+
 
 class RandomRightAngleRotation:
     """Rotate by 0, 90, 180 or 270 degrees. On a square image this adds no borders."""
@@ -33,7 +39,7 @@ def get_eval_transform(img_size: int = IMG_SIZE):
     """Deterministic pipeline used for validation, test and the web app."""
     return T.Compose([
         T.Resize((img_size, img_size)),
-        T.ToTensor(),                              # HWC uint8 [0,255] -> CHW float [0,1]
+        T.ToTensor(),
         T.Normalize(IMAGENET_MEAN, IMAGENET_STD),
     ])
 

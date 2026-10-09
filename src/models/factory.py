@@ -3,11 +3,19 @@ from torchvision import models
 
 from src.models.custom_cnn import TomatoCNN
 
-PARTIAL_DESC = {
-    "resnet18": "layer4 + fc",
-    "efficientnet_b0": "features[6:] (last two MBConv stages + final conv) + classifier",
-    "mobilenet_v3_large": "features[13:] (last 3 blocks + final conv) + classifier",
-    "mobilenet_v3_small": "features[9:] (last 3 blocks + final conv) + classifier",
+UNFREEZE_DESC = {
+    "partial": {
+        "resnet18": "layer4 + fc",
+        "efficientnet_b0": "features[6:] (last two MBConv stages + final conv) + classifier",
+        "mobilenet_v3_large": "features[13:] (last 3 blocks + final conv) + classifier",
+        "mobilenet_v3_small": "features[9:] (last 3 blocks + final conv) + classifier",
+    },
+    "deep": {
+        "resnet18": "layer3 + layer4 + fc",
+        "efficientnet_b0": "features[4:] (last four MBConv stages + final conv) + classifier",
+        "mobilenet_v3_large": "features[7:] (blocks 7-15 + final conv) + classifier",
+        "mobilenet_v3_small": "features[6:] (blocks 6-11 + final conv) + classifier",
+    },
 }
 
 
@@ -40,7 +48,16 @@ def head_module(model, name):
     return model.fc if name == "resnet18" else model.classifier
 
 
-def partial_blocks(model, name):
+def partial_blocks(model, name, mode="partial"):
+    if mode == "deep":
+        if name == "resnet18":
+            return [model.layer3, model.layer4]
+        if name == "efficientnet_b0":
+            return list(model.features)[4:]
+        if name == "mobilenet_v3_large":
+            return list(model.features)[7:]
+        if name == "mobilenet_v3_small":
+            return list(model.features)[6:]
     if name == "resnet18":
         return [model.layer4]
     if name == "efficientnet_b0":
@@ -53,7 +70,7 @@ def partial_blocks(model, name):
 
 
 def set_trainable(model, name, mode):
-    """mode: 'full' (all layers), 'head' (new head only), 'partial' (head + deepest blocks)."""
+    """mode: 'full' (all layers), 'head' (new head only), 'partial' or 'deep' (head + deepest blocks)."""
     if mode == "full" or name == "custom_cnn":
         for p in model.parameters():
             p.requires_grad = True
@@ -61,8 +78,8 @@ def set_trainable(model, name, mode):
     for p in model.parameters():
         p.requires_grad = False
     modules = [head_module(model, name)]
-    if mode == "partial":
-        modules += partial_blocks(model, name)
+    if mode in ("partial", "deep"):
+        modules += partial_blocks(model, name, mode)
     for mod in modules:
         for p in mod.parameters():
             p.requires_grad = True
