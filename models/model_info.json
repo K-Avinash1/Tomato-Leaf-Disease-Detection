@@ -1,0 +1,113 @@
+{
+  "model_file": "best_model.pth",
+  "sha256": "174de9bc676874a8a6cf93e84a49e1f386ccdc02e3dd266100fbac29744f33d9",
+  "source_experiment": "E010_mnv3_deep_seed7",
+  "selected_epoch": 17,
+  "selection": "Phase 11 (decisions 31-32); test set not used for selection",
+  "architecture": {
+    "name": "mobilenet_v3_large",
+    "dropout": 0.3,
+    "num_classes": 10,
+    "parameters": 4214842
+  },
+  "classes_in_output_order": [
+    "Bacterial Spot",
+    "Early Blight",
+    "Late Blight",
+    "Leaf Mold",
+    "Septoria Leaf Spot",
+    "Spider Mites",
+    "Target Spot",
+    "Yellow Leaf Curl Virus",
+    "Tomato Mosaic Virus",
+    "Healthy"
+  ],
+  "input": {
+    "size": 224,
+    "color": "RGB",
+    "resize": "whole image to size x size, no crop",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "training": {
+    "strategy_used": "two_stage",
+    "plan": [
+      [
+        "A_head",
+        "head",
+        5,
+        0.001
+      ],
+      [
+        "B_deep",
+        "deep",
+        15,
+        0.0001
+      ]
+    ],
+    "unfreeze": "deep",
+    "aug": "default",
+    "aug_config": {
+      "crop_scale": [
+        0.75,
+        1.0
+      ],
+      "crop_ratio": [
+        0.9,
+        1.1
+      ],
+      "hflip_p": 0.5,
+      "rot90": true,
+      "brightness": 0.2,
+      "contrast": 0.2,
+      "saturation": 0.1,
+      "hue": 0.0
+    },
+    "seed": 7,
+    "batch_size": 64,
+    "weight_decay": 0.0001,
+    "hardware": "Tesla T4",
+    "torch": "2.11.0+cu130",
+    "torchvision": "0.26.0+cu130",
+    "pretrained_weights": "torchvision IMAGENET1K_V1"
+  },
+  "validation": {
+    "metrics": {
+      "accuracy": 0.9983333333333333,
+      "macro_precision": 0.998196228891446,
+      "macro_recall": 0.9980381652661064,
+      "macro_f1": 0.9981144327039632,
+      "weighted_f1": 0.9983317693231826
+    },
+    "calibration": {
+      "val_nll": 0.00903346231925456,
+      "val_ece": 0.0020184815793523915
+    }
+  },
+  "cpu_benchmark_laptop": {
+    "exp": "E010_mnv3_deep_seed7",
+    "model": "mobilenet_v3_large",
+    "params_M": 4.21,
+    "file_MB": 17.1,
+    "ms_per_image_batch1_median": 25.7,
+    "batch1_p95": 40.3,
+    "ms_per_image_batch16": 18.6,
+    "ms_end_to_end_median": 25.3,
+    "end_to_end_p95": 51.2
+  },
+  "created": "2026-10-12",
+  "local_environment": {
+    "python": "3.11.9",
+    "torch": "2.14.1+cpu",
+    "torchvision": "0.29.1+cpu"
+  },
+  "note": "Raw softmax confidence is not a reliability guarantee; see the reliability phases (14-18)."
+}
