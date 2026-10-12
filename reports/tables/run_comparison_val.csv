@@ -1,0 +1,11 @@
+run,model,setup,errors,acc,macroF1,lastF1,NLL,ECE,EarlyBlightRecall,params_M,ckpt_MB,minutes
+E002_resnet18,resnet18,unfreeze=partial,28,0.9883,0.9868,0.9864,0.0418,0.0044,0.96,11.18,44.8,22.0
+E003_efficientnet_b0,efficientnet_b0,unfreeze=partial,17,0.9929,0.9922,0.9893,0.0232,0.0033,0.973,4.02,16.4,24.2
+E004_mobilenet_v3_large,mobilenet_v3_large,unfreeze=partial,14,0.9942,0.9935,0.993,0.0248,0.0031,0.96,4.21,17.1,23.4
+E005_mnv3_seed7,mobilenet_v3_large,"unfreeze=partial, seed=7",14,0.9942,0.9937,0.9934,0.0173,0.0031,0.967,4.21,17.1,22.1
+E006_mnv3_deep,mobilenet_v3_large,unfreeze=deep,4,0.9983,0.9984,0.9975,0.0106,0.0037,1.0,4.21,17.1,22.0
+E007_mnv3_lrb3e4,mobilenet_v3_large,"unfreeze=partial, lr_b=0.0003",8,0.9967,0.9962,0.9959,0.0139,0.0016,0.973,4.21,17.1,21.8
+E008_mnv3_classw,mobilenet_v3_large,"unfreeze=partial, class-weights",17,0.9929,0.9924,0.9924,0.0261,0.0043,0.96,4.21,17.1,21.5
+E009_mnv3_strongau,mobilenet_v3_large,"unfreeze=partial, aug=strong",17,0.9929,0.9921,0.9918,0.0246,0.0035,0.967,4.21,17.1,21.1
+E010_mnv3_deep_seed7,mobilenet_v3_large,"unfreeze=deep, seed=7",4,0.9983,0.9981,0.9976,0.009,0.002,0.987,4.21,17.1,22.1
+E011_effnet_deep,efficientnet_b0,unfreeze=deep,5,0.9979,0.9976,0.9935,0.009,0.0031,0.993,4.02,16.4,23.6
