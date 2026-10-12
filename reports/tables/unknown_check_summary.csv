@@ -1,0 +1,4 @@
+exp,AUROC_max_softmax,unknown_accepted_at_95pct_known_max_softmax,AUROC_max_logit,unknown_accepted_at_95pct_known_max_logit,median_conf_known,median_conf_unknown,known_conf_ge_0.9,unknown_conf_ge_0.9,unknown_conf_ge_0.99
+E006_mnv3_deep,0.9243,0.2919,0.8797,0.4044,1.0,0.9431,0.9892,0.5772,0.3205
+E010_mnv3_deep_seed7,0.9305,0.2829,0.9169,0.3131,1.0,0.9537,0.99,0.5968,0.3421
+E011_effnet_deep,0.9234,0.2602,0.9137,0.2778,1.0,0.9225,0.9875,0.5376,0.2837

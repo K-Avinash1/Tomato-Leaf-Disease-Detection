@@ -1,0 +1,16 @@
+exp,folder,n,accepted_at_95pct_known,median_conf,most_common_tomato_label
+E006_mnv3_deep,Pepper__bell___Bacterial_spot,600,0.247,0.929,Target Spot
+E006_mnv3_deep,Pepper__bell___healthy,600,0.045,0.801,Spider Mites
+E006_mnv3_deep,Potato___Early_blight,600,0.312,0.961,Septoria Leaf Spot
+E006_mnv3_deep,Potato___Late_blight,600,0.597,0.998,Late Blight
+E006_mnv3_deep,Potato___healthy,152,0.164,0.871,Spider Mites
+E010_mnv3_deep_seed7,Pepper__bell___Bacterial_spot,600,0.225,0.939,Target Spot
+E010_mnv3_deep_seed7,Pepper__bell___healthy,600,0.05,0.83,Spider Mites
+E010_mnv3_deep_seed7,Potato___Early_blight,600,0.31,0.97,Septoria Leaf Spot
+E010_mnv3_deep_seed7,Potato___Late_blight,600,0.587,0.999,Late Blight
+E010_mnv3_deep_seed7,Potato___healthy,152,0.125,0.902,Spider Mites
+E011_effnet_deep,Pepper__bell___Bacterial_spot,600,0.26,0.948,Target Spot
+E011_effnet_deep,Pepper__bell___healthy,600,0.032,0.751,Spider Mites
+E011_effnet_deep,Potato___Early_blight,600,0.187,0.911,Septoria Leaf Spot
+E011_effnet_deep,Potato___Late_blight,600,0.607,0.998,Late Blight
+E011_effnet_deep,Potato___healthy,152,0.086,0.854,Spider Mites
