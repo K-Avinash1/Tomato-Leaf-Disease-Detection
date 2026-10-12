@@ -1,8 +1,8 @@
 # Project Context
 
 **Project:** Tomato Leaf Disease Detection and Treatment Recommendation Using Deep Learning
-**Current phase:** Phase 12 (Final classification evaluation)
-**Completed phases:** Phases 1 to 11
+**Current phase:** Phase 13 (Error analysis).
+**Completed phases:** Phases 1 to 12
 **Random seed:** 42
 
 ## Environment
@@ -42,3 +42,6 @@ Tuning result: deep unfreezing of Stage B is the retained change (MobileNetV3-L 
 Phase 11 so far: finalists are the deep-unfreezing models (E006, E010 MobileNetV3-Large; E011 EfficientNet-B0). 14 validation images are misclassified by at least 3 of 10 runs (hard-image set). E010 chosen over E006 as the checkpoint by the preset lower-NLL rule, pending the CPU speed and unknown-image checks.
 
 Final model: E010 (MobileNetV3-Large, deep unfreezing, seed 7): validation 4 errors/2,400, macro F1 0.9981, NLL 0.0090, ECE 0.0020, 17.1 MB, 25.7 ms per image on laptop CPU (batch 1). E011 (EfficientNet-B0) is 44.0 ms. Saved as models/best_model.pth with model_info.json; backups on Drive.
+
+
+Phase 12 test (E010, once): accuracy 0.9938 (15/2,400 errors; 95% CI 0.9897-0.9965), macro F1 0.9928 (CI 0.9885-0.9964), weighted F1 0.9937, ROC-AUC 0.99998, NLL 0.0155, ECE 0.0032, Brier 0.0093; mean confidence correct 0.997 vs wrong 0.791. Test is lower than validation (4 errors), consistent with selection optimism. Weakest class: Early Blight (recall 0.973). All 21 dark test images (Late Blight) correct. Not evidence of field performance.

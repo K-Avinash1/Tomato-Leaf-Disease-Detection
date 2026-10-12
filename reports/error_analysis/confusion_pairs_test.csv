@@ -1,0 +1,12 @@
+class,pred_class,0
+Target Spot,Spider Mites,3
+Early Blight,Late Blight,2
+Early Blight,Bacterial Spot,2
+Bacterial Spot,Yellow Leaf Curl Virus,1
+Bacterial Spot,Late Blight,1
+Late Blight,Bacterial Spot,1
+Healthy,Late Blight,1
+Late Blight,Early Blight,1
+Leaf Mold,Spider Mites,1
+Leaf Mold,Tomato Mosaic Virus,1
+Yellow Leaf Curl Virus,Late Blight,1
