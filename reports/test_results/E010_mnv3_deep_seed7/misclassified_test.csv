@@ -1,0 +1,16 @@
+rel_path,class,pred_class,confidence,dark
+Tomato_Early_blight/b2b63d7c-d8f7-44ff-b53e-6214ddbed5d9___RS_Erly.B 9509.JPG,Early Blight,Late Blight,0.9470906457647382,False
+Tomato__Target_Spot/96028d51-a29b-4251-a0de-4615a6dc6d26___Com.G_TgS_FL 9730.JPG,Target Spot,Spider Mites,0.9453458280651182,False
+Tomato__Target_Spot/8cdd8352-69a6-471e-978b-2f733fb4d33d___Com.G_TgS_FL 0004.JPG,Target Spot,Spider Mites,0.9210907884084147,False
+Tomato_Early_blight/9305f21d-4558-49ae-b831-a7a1a4d399c2___RS_Erly.B 7417.JPG,Early Blight,Late Blight,0.9072372467701765,False
+Tomato__Tomato_YellowLeaf__Curl_Virus/3963a2e9-e6cc-4c8c-b8d2-96c7b2aa2f5a___UF.GRC_YLCV_Lab 01587.JPG,Yellow Leaf Curl Virus,Late Blight,0.9070784393209027,False
+Tomato_Late_blight/e131a4c1-21d7-40cd-a19f-02456e411750___GHLB Leaf 3 Day 1.JPG,Late Blight,Bacterial Spot,0.887174796116684,False
+Tomato_healthy/7853cc96-2ac8-479e-83f5-353b88a351a2___GH_HL Leaf 514.3.JPG,Healthy,Late Blight,0.8132526127195228,False
+Tomato_Leaf_Mold/bb3b17dd-b745-4706-8e03-ff2660d77c23___Crnl_L.Mold 6512.JPG,Leaf Mold,Tomato Mosaic Virus,0.8119732929127793,False
+Tomato_Early_blight/386b2d80-35c1-4fa5-98b6-f78c1c9cfb36___RS_Erly.B 6470.JPG,Early Blight,Bacterial Spot,0.7969553047955392,False
+Tomato_Early_blight/f0763973-1898-4ae6-9350-c9b61976c600___RS_Erly.B 6456.JPG,Early Blight,Bacterial Spot,0.7651464768484879,False
+Tomato_Leaf_Mold/241287d9-30c8-4463-999c-821fd32ba894___Crnl_L.Mold 6583.JPG,Leaf Mold,Spider Mites,0.7427311779615173,False
+Tomato_Bacterial_spot/ccb77acf-506d-4ebe-a35c-12bbd9e0825f___UF.GRC_BS_Lab Leaf 0653.JPG,Bacterial Spot,Late Blight,0.646954152193793,False
+Tomato_Late_blight/5b71f955-289e-4279-896c-b79d69c8dd5e___RS_Late.B 6495.JPG,Late Blight,Early Blight,0.6421365870189557,False
+Tomato__Target_Spot/35b0ec56-80f9-4fee-bbf4-b80f782ad37b___Com.G_TgS_FL 9985.JPG,Target Spot,Spider Mites,0.5656035196234738,False
+Tomato_Bacterial_spot/bc185bd9-5335-4fd5-b426-8c30b56feda3___UF.GRC_BS_Lab Leaf 8782.JPG,Bacterial Spot,Yellow Leaf Curl Virus,0.5649213951523012,False

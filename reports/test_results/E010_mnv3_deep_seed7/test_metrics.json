@@ -1,0 +1,77 @@
+{
+  "experiment": "E010_mnv3_deep_seed7",
+  "role": "final",
+  "evaluated_on": "test",
+  "n_images": 2400,
+  "when": "2026-10-12T17:47:28",
+  "git_commit": "f8b4cf7c58e39b8cb2c18d4f0ba949ac363a4ffb",
+  "checkpoint_sha256": "174de9bc676874a8a6cf93e84a49e1f386ccdc02e3dd266100fbac29744f33d9",
+  "metrics": {
+    "accuracy": 0.99375,
+    "errors": 15,
+    "accuracy_ci95_exact": [
+      0.9897124956456037,
+      0.9964978281149834
+    ],
+    "macro_precision": 0.9931365782128496,
+    "macro_recall": 0.9925510562325389,
+    "macro_f1": 0.9928065693665461,
+    "macro_f1_ci95_bootstrap": [
+      0.9885018283763445,
+      0.996368854427186
+    ],
+    "weighted_precision": 0.9938005983103266,
+    "weighted_recall": 0.99375,
+    "weighted_f1": 0.9937493230941044
+  },
+  "roc_auc_ovr": {
+    "macro": 0.9999821036398379,
+    "weighted": 0.9999826660754005
+  },
+  "calibration": {
+    "nll": 0.015499386783302422,
+    "ece_15bins": 0.003192073761724655,
+    "brier": 0.009253822737307404,
+    "mean_confidence_correct": 0.9973917577397736,
+    "mean_confidence_wrong": 0.7909794842448272
+  },
+  "subsets": {
+    "dark (black background)": {
+      "n": 21,
+      "errors": 0,
+      "accuracy": 1.0
+    },
+    "not dark": {
+      "n": 2379,
+      "errors": 15,
+      "accuracy": 0.9936948297604036
+    },
+    "Late Blight, dark": {
+      "n": 21,
+      "errors": 0,
+      "accuracy": 1.0
+    },
+    "Late Blight, not dark": {
+      "n": 263,
+      "errors": 2,
+      "accuracy": 0.9923954372623575
+    }
+  },
+  "efficiency": {
+    "parameters": 4214842,
+    "file_mb": 17.1,
+    "cpu_total_seconds_for_test_set": 61.8,
+    "laptop_benchmark": {
+      "exp": "E010_mnv3_deep_seed7",
+      "model": "mobilenet_v3_large",
+      "params_M": 4.21,
+      "file_MB": 17.1,
+      "ms_per_image_batch1_median": 25.7,
+      "batch1_p95": 40.3,
+      "ms_per_image_batch16": 18.6,
+      "ms_end_to_end_median": 25.3,
+      "end_to_end_p95": 51.2
+    }
+  },
+  "torch": "2.14.1+cpu"
+}
