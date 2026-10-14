@@ -1,8 +1,8 @@
 # Project Context
 
 **Project:** Tomato Leaf Disease Detection and Treatment Recommendation Using Deep Learning
-**Current phase:** Phase 13 (Error analysis).
-**Completed phases:** Phases 1 to 12
+**Current phase:** Phase 14 (Reliability and OOD system)
+**Completed phases:** Phases 1 to 13
 **Random seed:** 42
 
 ## Environment
@@ -45,3 +45,6 @@ Final model: E010 (MobileNetV3-Large, deep unfreezing, seed 7): validation 4 err
 
 
 Phase 12 test (E010, once): accuracy 0.9938 (15/2,400 errors; 95% CI 0.9897-0.9965), macro F1 0.9928 (CI 0.9885-0.9964), weighted F1 0.9937, ROC-AUC 0.99998, NLL 0.0155, ECE 0.0032, Brier 0.0093; mean confidence correct 0.997 vs wrong 0.791. Test is lower than validation (4 errors), consistent with selection optimism. Weakest class: Early Blight (recall 0.973). All 21 dark test images (Late Blight) correct. Not evidence of field performance.
+
+
+Phase 13: all 15 test errors have confidence below 0.95 (44/2,400 test images are below 0.95); 8 of 15 errors show mild or no visible symptoms, 4 are large dead-tissue lesions confusable across Early/Late Blight, 1 many small spots, 2 unusual framing/shape. Early Blight is the hardest class (2.67% error); all Target Spot errors go to Spider Mites. Errors lean toward softer images (median sharpness percentile 23), weak evidence. Confidence catches in-domain errors but not Pepper/Potato leaves.
