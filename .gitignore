@@ -12,3 +12,6 @@ models/*.pth
 .vscode/
 *.log
 runs/
+reports/ood/cache/
+
+models/*.npz

@@ -1,0 +1,58 @@
+group,file,width,height,brightness,sharpness,pred_class,confidence,acc95_max_softmax,acc95_max_logit,acc95_energy,acc95_mahalanobis,acc95_knn_cosine
+tomato_leaf,WhatsApp Image 2026-10-17 at 3.04.37 PM (1).jpeg,547,365,113.2,594.3,Early Blight,0.956,0,0,0,0,0
+tomato_leaf,WhatsApp Image 2026-10-17 at 3.04.37 PM.jpeg,451,679,113.1,398.7,Early Blight,0.959,0,0,0,0,0
+tomato_leaf,WhatsApp Image 2026-10-17 at 3.04.38 PM (1).jpeg,640,480,109.0,4294.7,Late Blight,0.978,0,0,0,0,0
+tomato_leaf,WhatsApp Image 2026-10-17 at 3.04.38 PM.jpeg,335,597,110.1,1168.6,Early Blight,0.722,0,0,0,0,0
+tomato_leaf,WhatsApp Image 2026-10-17 at 3.04.39 PM.jpeg,641,478,106.4,1318.6,Early Blight,0.971,0,0,0,0,0
+tomato_leaf,WhatsApp Image 2026-10-17 at 3.04.40 PM (1).jpeg,387,516,149.3,420.5,Early Blight,1.0,1,1,1,0,1
+tomato_leaf,WhatsApp Image 2026-10-17 at 3.04.40 PM.jpeg,448,684,98.4,963.7,Early Blight,1.0,1,1,1,0,0
+tomato_leaf,WhatsApp Image 2026-10-17 at 3.04.41 PM.jpeg,1500,1000,110.9,959.3,Early Blight,1.0,1,1,1,0,0
+tomato_leaf,WhatsApp Image 2026-10-17 at 3.04.42 PM (1).jpeg,432,324,101.1,548.0,Late Blight,0.984,0,0,0,0,0
+tomato_leaf,WhatsApp Image 2026-10-17 at 3.04.42 PM.jpeg,834,368,142.0,1812.2,Early Blight,0.952,0,0,0,0,0
+tomato_leaf,WhatsApp Image 2026-10-17 at 3.04.43 PM.jpeg,463,662,111.3,479.0,Early Blight,0.995,0,0,0,0,0
+tomato_leaf,WhatsApp Image 2026-10-17 at 3.04.44 PM (1).jpeg,640,480,133.2,940.7,Early Blight,0.78,0,0,0,0,0
+tomato_leaf,WhatsApp Image 2026-10-17 at 3.04.44 PM.jpeg,471,650,120.8,1096.1,Early Blight,0.998,1,0,0,0,0
+tomato_leaf,WhatsApp Image 2026-10-17 at 3.04.45 PM (1).jpeg,550,558,103.5,913.6,Late Blight,0.998,1,0,0,0,0
+tomato_leaf,WhatsApp Image 2026-10-17 at 3.04.45 PM.jpeg,480,640,118.9,852.8,Early Blight,1.0,1,1,1,0,0
+tomato_leaf,WhatsApp Image 2026-10-17 at 3.04.46 PM.jpeg,300,225,55.8,178.1,Yellow Leaf Curl Virus,0.96,0,0,0,0,0
+other_leaf,"815osyvV0RL._AC_UF1000,1000_QL80_.jpg",1000,665,64.9,1546.4,Healthy,0.993,0,0,0,0,0
+other_leaf,images (1).jpg,635,483,105.3,1668.7,Early Blight,0.999,1,0,0,0,0
+other_leaf,images (10).jpg,387,516,67.3,1221.3,Early Blight,1.0,1,1,1,0,0
+other_leaf,images (11).jpg,447,447,96.7,1055.3,Target Spot,0.855,0,0,0,0,0
+other_leaf,images (12).jpg,498,615,120.4,9346.0,Late Blight,0.696,0,0,0,0,0
+other_leaf,images (13).jpg,259,195,121.7,1385.2,Bacterial Spot,0.919,0,0,0,0,0
+other_leaf,images (2).jpg,640,480,109.2,1314.8,Late Blight,0.7,0,0,0,0,0
+other_leaf,images (3).jpg,679,452,104.8,447.6,Late Blight,0.668,0,0,0,0,0
+other_leaf,images (4).jpg,480,638,126.8,2168.0,Early Blight,0.44,0,0,0,0,0
+other_leaf,images (5).jpg,638,480,144.5,2415.1,Early Blight,0.649,0,0,0,0,0
+other_leaf,images (6).jpg,533,400,103.0,429.7,Late Blight,0.975,0,0,0,0,0
+other_leaf,images (7).jpg,447,447,107.3,1306.3,Late Blight,0.99,0,0,0,0,0
+other_leaf,images (8).jpg,535,373,134.9,888.9,Early Blight,0.985,0,0,0,0,0
+other_leaf,images (9).jpg,679,452,118.3,2818.8,Healthy,0.428,0,0,0,0,0
+other_leaf,images.jpg,640,426,153.7,946.9,Late Blight,0.9,0,0,0,0,0
+other_leaf,unusual-edible-plants-01.jpg,1600,2133,132.7,1072.8,Early Blight,1.0,1,1,1,0,0
+non_leaf,images (1).jpg,447,447,235.3,518.7,Late Blight,0.889,0,0,0,0,0
+non_leaf,images (10).jpg,399,501,244.5,106.5,Late Blight,0.744,0,0,0,0,0
+non_leaf,images (11).jpg,447,447,241.1,621.7,Septoria Leaf Spot,0.674,0,0,0,0,0
+non_leaf,images (12).jpg,447,447,249.2,541.9,Early Blight,0.444,0,0,0,0,0
+non_leaf,images (13).jpg,216,233,176.1,3067.3,Early Blight,0.605,0,0,0,0,0
+non_leaf,images (14).jpg,554,554,212.6,539.4,Late Blight,0.775,0,0,0,0,0
+non_leaf,images (2).jpg,447,447,156.4,493.7,Late Blight,0.992,0,0,0,0,0
+non_leaf,images (3).jpg,347,576,136.8,1258.6,Late Blight,0.994,0,0,0,0,0
+non_leaf,images (4).jpg,737,416,154.9,1408.3,Early Blight,1.0,1,1,1,0,0
+non_leaf,images (5).jpg,447,447,185.6,2323.5,Early Blight,0.632,0,0,0,0,0
+non_leaf,images (6).jpg,354,564,221.5,296.2,Late Blight,0.995,0,0,0,0,0
+non_leaf,images (7).jpg,447,447,145.6,1701.8,Early Blight,0.972,0,0,0,0,0
+non_leaf,images (8).jpg,568,540,191.3,1634.1,Late Blight,0.657,0,0,0,0,0
+non_leaf,images (9).jpg,516,387,219.1,2958.2,Septoria Leaf Spot,0.997,1,0,0,0,0
+non_leaf,images.jpg,539,449,169.8,5876.5,Early Blight,0.628,0,0,0,0,0
+poor_quality,images (1).jpg,459,669,55.8,740.2,Late Blight,0.974,0,0,0,0,0
+poor_quality,images (15).jpg,678,452,83.9,37.4,Late Blight,1.0,1,1,1,0,0
+poor_quality,images (2).jpg,547,365,29.7,1735.2,Late Blight,0.893,0,0,0,0,0
+poor_quality,images (3).jpg,415,739,22.8,377.8,Leaf Mold,0.678,0,0,0,0,0
+poor_quality,images (4).jpg,470,626,20.8,146.3,Late Blight,0.583,0,0,0,0,0
+poor_quality,images (5).jpg,547,365,15.7,822.9,Yellow Leaf Curl Virus,0.901,0,0,0,0,0
+poor_quality,images (6).jpg,480,640,134.1,262.5,Late Blight,0.991,0,0,0,0,0
+poor_quality,images (7).jpg,640,480,109.1,815.2,Late Blight,0.994,0,0,0,0,0
+poor_quality,images.jpg,511,340,149.8,528.0,Late Blight,0.945,0,0,0,0,0
+poor_quality,vibrant-green-leaves-in-sunlight-with-soft-blurry-background-photo.jpg,1249,700,136.5,719.1,Late Blight,0.962,0,0,0,0,0

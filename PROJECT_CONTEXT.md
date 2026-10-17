@@ -1,7 +1,7 @@
 # Project Context
 
 **Project:** Tomato Leaf Disease Detection and Treatment Recommendation Using Deep Learning
-**Current phase:** Phase 14 (Reliability and OOD system)
+**Current phase:** Phase 14 (Reliability and OOD system), in progress
 **Completed phases:** Phases 1 to 13
 **Random seed:** 42
 
@@ -48,3 +48,7 @@ Phase 12 test (E010, once): accuracy 0.9938 (15/2,400 errors; 95% CI 0.9897-0.99
 
 
 Phase 13: all 15 test errors have confidence below 0.95 (44/2,400 test images are below 0.95); 8 of 15 errors show mild or no visible symptoms, 4 are large dead-tissue lesions confusable across Early/Late Blight, 1 many small spots, 2 unusual framing/shape. Early Blight is the hardest class (2.67% error); all Target Spot errors go to Spider Mites. Errors lean toward softer images (median sharpness percentile 23), weak evidence. Confidence catches in-domain errors but not Pepper/Potato leaves.
+
+Own evaluation photos: data/external/my_photos (tomato_leaf 16, other_leaf 16, non_leaf 15, poor_quality 10; mostly web/WhatsApp images; git-ignored; evaluation only).
+
+Phase 14 (so far): kNN cosine selected for 'unsupported' (dev false acceptance 19.7% at 95% known acceptance; max softmax 28.8%, max logit 32.6%, energy 33.2%, Mahalanobis 44.7%). Worst unknown: Potato Late Blight (52% accepted by kNN). Own photos: kNN rejected 41/41 non-tomato or poor-quality images but also 15/16 tomato photos from field-style images (domain gap).

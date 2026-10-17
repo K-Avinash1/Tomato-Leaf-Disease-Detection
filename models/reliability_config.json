@@ -1,0 +1,14 @@
+{
+  "created": "2026-10-17",
+  "model_sha256": "174de9bc676874a8a6cf93e84a49e1f386ccdc02e3dd266100fbac29744f33d9",
+  "knn_bank_file": "knn_bank.npz",
+  "knn_bank_sha256": "0e57077d055c48868ee4aa4f9bbf08991bfa25a107ed889887af877f58a0e1b9",
+  "k": 10,
+  "tau_knn": 0.7543,
+  "tau_conf": 0.9747856855392456,
+  "knn_accept_on_validation": 0.94,
+  "confidence_accept_on_validation": 0.98,
+  "rejection_budget_on_validation": 0.08,
+  "rule": "unsupported if kNN similarity < tau_knn; else uncertain if max softmax < tau_conf; else reliable",
+  "thresholds_fitted_on": "tomato validation images only; scorer built from tomato training images only"
+}

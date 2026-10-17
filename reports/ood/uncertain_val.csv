@@ -1,0 +1,5 @@
+accept_target,confidence_threshold,images_flagged_uncertain,validation_errors_caught
+0.9,0.9992,240,4 of 4
+0.95,0.9952,120,4 of 4
+0.98,0.9748,48,4 of 4
+0.99,0.9005,24,4 of 4

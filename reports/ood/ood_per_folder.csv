@@ -1,0 +1,6 @@
+folder,n,max_softmax,max_logit,energy,mahalanobis,knn_cosine
+Pepper__bell___Bacterial_spot,600,0.225,0.197,0.202,0.273,0.052
+Pepper__bell___healthy,600,0.05,0.007,0.007,0.423,0.008
+Potato___Early_blight,600,0.31,0.467,0.482,0.545,0.205
+Potato___Late_blight,600,0.587,0.652,0.653,0.492,0.522
+Potato___healthy,152,0.125,0.039,0.039,0.908,0.039

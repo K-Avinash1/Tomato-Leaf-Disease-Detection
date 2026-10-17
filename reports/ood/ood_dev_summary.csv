@@ -1,0 +1,6 @@
+method,AUROC_dev,falseAccept@95_dev,falseAccept@99_dev,AUROC_eval,falseAccept@95_eval,falseAccept@99_eval
+max_softmax,0.9319,0.2884,0.5964,0.9319,0.2774,0.5964
+max_logit,0.9155,0.326,0.5478,0.9183,0.3002,0.5455
+energy,0.9149,0.3323,0.5603,0.9177,0.3041,0.5596
+mahalanobis,0.9067,0.4467,0.7343,0.9066,0.4765,0.7461
+knn_cosine,0.9577,0.1967,0.4687,0.9614,0.1779,0.4718
