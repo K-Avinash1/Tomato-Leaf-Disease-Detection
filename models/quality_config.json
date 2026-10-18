@@ -1,0 +1,21 @@
+{
+  "created": "2026-10-18",
+  "thresholds": {
+    "p95_dark": 72.12,
+    "p5_bright": 117.0,
+    "sharpness": 29.252134067020382,
+    "std": 5.314870823893966,
+    "min_side": 160
+  },
+  "rule": "flag if min side < min_side; std < std; p95 < p95_dark; p5 > p5_bright; sharpness < sharpness (all on a 256x256 gray version, as in Phase 3)",
+  "chosen_by": {
+    "budget_pct_on_tomato_training_images": 0.5,
+    "black_background_guard": 0.02,
+    "min_side": "smallest side keeping accuracy >= 97% on degraded validation images, floor 64px",
+    "std": "half of the lowest contrast (std) of any valid tomato training image"
+  },
+  "history": {
+    "std_threshold_before": 15.90980357841502,
+    "reason": "the 0.5% budget rule flagged 14 valid validation leaves as 'blank'; replaced by half the lowest contrast seen in any valid training image"
+  }
+}

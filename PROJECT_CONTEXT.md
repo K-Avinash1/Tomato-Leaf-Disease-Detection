@@ -1,7 +1,7 @@
 # Project Context
 
 **Project:** Tomato Leaf Disease Detection and Treatment Recommendation Using Deep Learning
-**Current phase:** Phase 14 (Reliability and OOD system), in progress
+**Current phase:** Phase 16 (Image quality validation), in progress
 **Completed phases:** Phases 1 to 13
 **Random seed:** 42
 

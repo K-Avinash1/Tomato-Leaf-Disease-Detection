@@ -1,0 +1,58 @@
+group,file,min_side,p5,p95,sharpness,reasons
+tomato_leaf,6-10-17 at 3.04.37 PM (1).jpeg,365,30.0,183.0,594.3,ok
+tomato_leaf, 2026-10-17 at 3.04.37 PM.jpeg,451,59.0,157.0,398.7,ok
+tomato_leaf,6-10-17 at 3.04.38 PM (1).jpeg,480,30.0,203.0,4294.7,ok
+tomato_leaf, 2026-10-17 at 3.04.38 PM.jpeg,335,47.0,168.0,1168.6,ok
+tomato_leaf, 2026-10-17 at 3.04.39 PM.jpeg,478,28.0,231.0,1318.6,ok
+tomato_leaf,6-10-17 at 3.04.40 PM (1).jpeg,387,61.0,242.0,420.5,ok
+tomato_leaf, 2026-10-17 at 3.04.40 PM.jpeg,448,11.0,179.0,963.7,ok
+tomato_leaf, 2026-10-17 at 3.04.41 PM.jpeg,1000,28.0,184.0,959.3,ok
+tomato_leaf,6-10-17 at 3.04.42 PM (1).jpeg,324,29.0,197.0,548.0,ok
+tomato_leaf, 2026-10-17 at 3.04.42 PM.jpeg,368,51.0,216.0,1812.2,ok
+tomato_leaf, 2026-10-17 at 3.04.43 PM.jpeg,463,51.0,170.0,479.0,ok
+tomato_leaf,6-10-17 at 3.04.44 PM (1).jpeg,480,49.0,204.0,940.7,ok
+tomato_leaf, 2026-10-17 at 3.04.44 PM.jpeg,471,63.0,226.0,1096.1,ok
+tomato_leaf,6-10-17 at 3.04.45 PM (1).jpeg,550,67.0,153.0,913.6,ok
+tomato_leaf, 2026-10-17 at 3.04.45 PM.jpeg,480,28.0,199.0,852.8,ok
+tomato_leaf, 2026-10-17 at 3.04.46 PM.jpeg,225,3.0,120.0,178.1,ok
+other_leaf,"V0RL._AC_UF1000,1000_QL80_.jpg",665,6.0,141.0,1546.4,ok
+other_leaf,images (1).jpg,483,39.0,200.0,1668.7,ok
+other_leaf,images (10).jpg,387,20.0,133.0,1221.3,ok
+other_leaf,images (11).jpg,447,26.0,175.0,1055.3,ok
+other_leaf,images (12).jpg,498,42.0,202.0,9346.0,ok
+other_leaf,images (13).jpg,195,12.0,199.0,1385.2,ok
+other_leaf,images (2).jpg,480,31.0,223.0,1314.8,ok
+other_leaf,images (3).jpg,452,41.0,163.0,447.6,ok
+other_leaf,images (4).jpg,480,49.0,176.0,2168.0,ok
+other_leaf,images (5).jpg,480,42.0,208.0,2415.1,ok
+other_leaf,images (6).jpg,400,26.0,248.0,429.7,ok
+other_leaf,images (7).jpg,447,22.0,179.0,1306.3,ok
+other_leaf,images (8).jpg,373,76.0,197.0,888.9,ok
+other_leaf,images (9).jpg,452,23.0,209.0,2818.8,ok
+other_leaf,images.jpg,426,66.0,211.0,946.9,ok
+other_leaf,unusual-edible-plants-01.jpg,1600,35.0,220.0,1072.8,ok
+non_leaf,images (1).jpg,447,84.0,255.0,518.7,ok
+non_leaf,images (10).jpg,399,205.0,250.0,106.5,too_bright
+non_leaf,images (11).jpg,447,83.0,255.0,621.7,ok
+non_leaf,images (12).jpg,447,252.0,255.0,541.9,too_bright
+non_leaf,images (13).jpg,216,19.0,255.0,3067.3,ok
+non_leaf,images (14).jpg,554,67.0,255.0,539.4,ok
+non_leaf,images (2).jpg,447,56.0,231.0,493.7,ok
+non_leaf,images (3).jpg,347,0.0,245.0,1258.6,ok
+non_leaf,images (4).jpg,416,27.0,215.0,1408.3,ok
+non_leaf,images (5).jpg,447,42.0,255.0,2323.5,ok
+non_leaf,images (6).jpg,354,87.0,252.0,296.2,ok
+non_leaf,images (7).jpg,447,57.0,207.0,1701.8,ok
+non_leaf,images (8).jpg,540,24.0,255.0,1634.1,ok
+non_leaf,images (9).jpg,387,33.0,255.0,2958.2,ok
+non_leaf,images.jpg,449,19.0,237.0,5876.5,ok
+poor_quality,images (1).jpg,459,18.0,131.0,740.2,ok
+poor_quality,images (15).jpg,452,21.0,185.0,37.4,ok
+poor_quality,images (2).jpg,365,0.0,103.0,1735.2,ok
+poor_quality,images (3).jpg,415,0.0,58.0,377.8,too_dark
+poor_quality,images (4).jpg,470,3.0,57.0,146.3,too_dark
+poor_quality,images (5).jpg,365,1.0,46.0,822.9,"blank,too_dark"
+poor_quality,images (6).jpg,480,59.0,208.0,262.5,ok
+poor_quality,images (7).jpg,480,44.0,199.0,815.2,ok
+poor_quality,images.jpg,340,94.0,218.0,528.0,ok
+poor_quality,ft-blurry-background-photo.jpg,700,31.0,228.0,719.1,ok
