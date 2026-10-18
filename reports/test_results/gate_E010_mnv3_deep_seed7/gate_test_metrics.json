@@ -1,0 +1,84 @@
+{
+  "experiment": "E010_mnv3_deep_seed7",
+  "evaluated_on": "test",
+  "n_images": 2400,
+  "when": "2026-10-18T12:02:26",
+  "git_commit": "f4e206d034a5607b613ce7f6f19f2b53ca7fe11f",
+  "model_sha256": "174de9bc676874a8a6cf93e84a49e1f386ccdc02e3dd266100fbac29744f33d9",
+  "config": {
+    "created": "2026-10-17",
+    "model_sha256": "174de9bc676874a8a6cf93e84a49e1f386ccdc02e3dd266100fbac29744f33d9",
+    "knn_bank_file": "knn_bank.npz",
+    "knn_bank_sha256": "0e57077d055c48868ee4aa4f9bbf08991bfa25a107ed889887af877f58a0e1b9",
+    "k": 10,
+    "tau_knn": 0.7543,
+    "tau_conf": 0.9747856855392456,
+    "knn_accept_on_validation": 0.94,
+    "confidence_accept_on_validation": 0.98,
+    "rejection_budget_on_validation": 0.08,
+    "rule": "unsupported if kNN similarity < tau_knn; else uncertain if max softmax < tau_conf; else reliable",
+    "thresholds_fitted_on": "tomato validation images only; scorer built from tomato training images only"
+  },
+  "test": {
+    "status_shares": {
+      "reliable": 0.9363,
+      "uncertain": 0.0092,
+      "unsupported": 0.0546
+    },
+    "accepted_images": 2247,
+    "errors_among_accepted": 0,
+    "accuracy_on_accepted": 1.0,
+    "accuracy_on_accepted_ci95": [
+      0.9983596559365057,
+      1.0
+    ],
+    "test_errors_total": 15,
+    "test_errors_by_status": {
+      "reliable": 0,
+      "uncertain": 4,
+      "unsupported": 11
+    },
+    "correct_images_rejected": 138,
+    "false_rejection_rate": 0.05786163522012579,
+    "dark_background_images": {
+      "n": 21,
+      "reliable": 1.0,
+      "uncertain": 0.0,
+      "unsupported": 0.0
+    }
+  },
+  "unknown_pepper_potato_eval_half": {
+    "n": 1276,
+    "status_shares": {
+      "reliable": 0.1466,
+      "uncertain": 0.0055,
+      "unsupported": 0.848
+    }
+  },
+  "own_photos": {
+    "tomato_leaf": {
+      "n": 16,
+      "reliable": 0.0625,
+      "uncertain": 0.0,
+      "unsupported": 0.9375
+    },
+    "other_leaf": {
+      "n": 16,
+      "reliable": 0.0,
+      "uncertain": 0.0,
+      "unsupported": 1.0
+    },
+    "non_leaf": {
+      "n": 15,
+      "reliable": 0.0,
+      "uncertain": 0.0,
+      "unsupported": 1.0
+    },
+    "poor_quality": {
+      "n": 10,
+      "reliable": 0.0,
+      "uncertain": 0.0,
+      "unsupported": 1.0
+    }
+  }
+}

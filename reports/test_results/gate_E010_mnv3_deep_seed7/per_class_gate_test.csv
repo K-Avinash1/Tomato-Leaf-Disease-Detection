@@ -1,0 +1,11 @@
+class,n,reliable,uncertain,unsupported,errors,errors_accepted
+Bacterial Spot,320,0.9594,0.0063,0.0344,2,0
+Early Blight,150,0.8267,0.0333,0.14,4,0
+Late Blight,284,0.9049,0.0035,0.0915,2,0
+Leaf Mold,143,0.9091,0.0,0.0909,2,0
+Septoria Leaf Spot,265,0.9057,0.0038,0.0906,0,0
+Spider Mites,250,0.96,0.008,0.032,0,0
+Target Spot,210,0.9048,0.0143,0.081,3,0
+Yellow Leaf Curl Virus,482,0.9772,0.0062,0.0166,1,0
+Tomato Mosaic Virus,57,0.9649,0.0,0.0351,0,0
+Healthy,239,0.9749,0.0209,0.0042,1,0
