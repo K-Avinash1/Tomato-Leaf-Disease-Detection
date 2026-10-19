@@ -1,8 +1,8 @@
 # Project Context
 
 **Project:** Tomato Leaf Disease Detection and Treatment Recommendation Using Deep Learning
-**Current phase:** Phase 18 (Confidence calibration)
-**Completed phases:** Phases 1 to 17
+**Current phase:** Phase 19 (Grad-CAM)
+**Completed phases:** Phases 1 to 18
 **Random seed:** 42
 
 ## Environment
@@ -55,3 +55,5 @@ Phase 14 (so far): kNN cosine selected for 'unsupported' (dev false acceptance 1
 
 
 Quality checks: min side 160 px, sharpness 29.25, too bright p5 > 117, too dark p95 < 72.12 (black-background guard), blank = half the lowest training contrast. Valid validation images flagged about 1.7% before the blank fix. Degradation experiment: model accuracy 99.7% clean, 94.6% at mild blur (sigma 1), 56% at sigma 2; 96.5% at 128 px; 88.6% at x2 overexposure. The model is fragile to blur; mild damage is covered by the gate, severe by the quality check.
+
+Calibration: raw confidence shown (temperature not adopted). All 4,724 validation+test predictions with confidence >= 0.95 were correct; below 0.95, 19 errors in 76 images. Overconfident on damaged images (blur sigma 2: confidence 82%, accuracy 56%).
