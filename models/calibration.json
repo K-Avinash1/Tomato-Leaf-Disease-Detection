@@ -1,0 +1,10 @@
+{
+  "created": "2026-10-19",
+  "model_sha256": "174de9bc676874a8a6cf93e84a49e1f386ccdc02e3dd266100fbac29744f33d9",
+  "temperature_fitted_on_validation": 0.9053689492994497,
+  "cross_checked_nll_improvement": -0.278037805734229,
+  "adoption_rule": "adopt if cross-checked NLL improves by at least 5%",
+  "adopted": false,
+  "temperature_used_for_displayed_confidence": 1.0,
+  "note": "The reliability gate (decision.py) keeps using RAW confidence; only the displayed 'Model confidence' uses the temperature."
+}

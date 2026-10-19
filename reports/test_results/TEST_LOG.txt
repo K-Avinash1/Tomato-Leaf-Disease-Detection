@@ -1,2 +1,3 @@
 2026-10-12T17:47:28 | E010_mnv3_deep_seed7 | final | sha 174de9bc6768 | commit f8b4cf7c58 | force=False
 2026-10-18T12:02:26 | gate on E010_mnv3_deep_seed7 | sha 174de9bc6768 | commit f4e206d034 | force=False
+2026-10-19T09:14:48 | calibration report from stored test logits (no new model pass) | E010_mnv3_deep_seed7

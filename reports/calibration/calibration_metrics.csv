@@ -1,0 +1,5 @@
+set,version,NLL,ECE,Brier,mean_conf,accuracy
+validation,raw,0.009,0.002,0.0029,0.9964,0.9983
+validation,temperature 0.91,0.0089,0.0018,0.0028,0.9969,0.9983
+test,raw,0.0155,0.0032,0.0093,0.9961,0.9938
+test,temperature 0.91,0.0159,0.003,0.0095,0.9967,0.9938
