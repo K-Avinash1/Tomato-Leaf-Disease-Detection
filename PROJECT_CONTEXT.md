@@ -1,8 +1,8 @@
 # Project Context
 
 **Project:** Tomato Leaf Disease Detection and Treatment Recommendation Using Deep Learning
-**Current phase:** Phase 16 (Image quality validation), in progress
-**Completed phases:** Phases 1 to 13
+**Current phase:** Phase 17 (Supported-scope validation)
+**Completed phases:** Phases 1 to 16
 **Random seed:** 42
 
 ## Environment
@@ -52,3 +52,6 @@ Phase 13: all 15 test errors have confidence below 0.95 (44/2,400 test images ar
 Own evaluation photos: data/external/my_photos (tomato_leaf 16, other_leaf 16, non_leaf 15, poor_quality 10; mostly web/WhatsApp images; git-ignored; evaluation only).
 
 Phase 14 (so far): kNN cosine selected for 'unsupported' (dev false acceptance 19.7% at 95% known acceptance; max softmax 28.8%, max logit 32.6%, energy 33.2%, Mahalanobis 44.7%). Worst unknown: Potato Late Blight (52% accepted by kNN). Own photos: kNN rejected 41/41 non-tomato or poor-quality images but also 15/16 tomato photos from field-style images (domain gap).
+
+
+Quality checks: min side 160 px, sharpness 29.25, too bright p5 > 117, too dark p95 < 72.12 (black-background guard), blank = half the lowest training contrast. Valid validation images flagged about 1.7% before the blank fix. Degradation experiment: model accuracy 99.7% clean, 94.6% at mild blur (sigma 1), 56% at sigma 2; 96.5% at 128 px; 88.6% at x2 overexposure. The model is fragile to blur; mild damage is covered by the gate, severe by the quality check.
