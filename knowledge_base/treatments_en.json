@@ -19,6 +19,27 @@
     "disclaimer": "This information is for general educational guidance only. Disease management practices vary by region, season, and local regulations. Always follow label instructions and seek advice from a qualified local agricultural expert before applying any treatment. No specific product names or doses are provided intentionally.",
     "expert_review_pending": true
   },
+  "ui": {
+    "language_label": "Language",
+    "scope_message": "This app is for tomato leaves only. Please photograph a single leaf on a plain, light-coloured background in a clear photo.",
+    "status_reliable": "Reliable result",
+    "status_uncertain": "Uncertain: the model is not fully confident",
+    "status_unsupported": "Not supported: this photo does not look like a tomato leaf",
+    "confidence_caveat": "This percentage is the model's own estimate, not a guarantee. On blurry or poor photos the model can be more confident than it should be.",
+    "disclaimer": "This information is for general guidance only. Before applying any treatment, consult your local agricultural expert or Krishi Vigyan Kendra (KVK) and follow the instructions on the product label.",
+    "expert_review_note": "This content is pending expert review.",
+    "quality_too_small": "The photo is too small. Please take a larger photo.",
+    "quality_blurry": "The photo is blurry. Please hold the camera steady and retake it.",
+    "quality_too_dark": "The photo is too dark. Please take it in good light.",
+    "quality_too_bright": "The photo is too bright. Please avoid harsh direct sunlight.",
+    "quality_blank": "No leaf is visible in the photo.",
+    "section_symptoms": "Symptoms",
+    "section_conditions": "Favourable conditions",
+    "section_cultural": "Cultural practices",
+    "section_biological": "Biological options",
+    "section_chemical": "Chemical groups",
+    "section_varieties": "Resistant varieties"
+  },
   "diseases": [
     {
       "id": "bacterial_spot",
