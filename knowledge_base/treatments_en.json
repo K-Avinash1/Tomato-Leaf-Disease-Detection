@@ -1,0 +1,407 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "language": "en",
+    "created": "2026-10-21",
+    "description": "Treatment and management guidance for tomato leaf diseases detected by the model. For informational use only. Always consult a local agricultural extension officer or certified agronomist before applying any treatment.",
+    "sources": {
+      "S01": "ICAR-Indian Institute of Vegetable Research (IIVR), Varanasi - Tomato Production Technology",
+      "S02": "University of Florida IFAS Extension - Tomato Production Guide",
+      "S03": "UC Davis IPM Program - Tomato Disease Management",
+      "S04": "ICAR-Central Institute for Arid Horticulture - Vegetable Crop Diseases",
+      "S05": "Penn State Extension - Tomato Disease Identification and Management",
+      "S06": "Cornell University Vegetable MD Online - Tomato",
+      "S07": "National Horticulture Mission (NHM), India - Integrated Pest Management Guidelines",
+      "S08": "University of Georgia Extension - Vegetable Disease Notes",
+      "S09": "ICAR-Directorate of Weed Research - Integrated Weed and Pest Management",
+      "S10": "Mississippi State University Extension - Tomato Diseases"
+    },
+    "disclaimer": "This information is for general educational guidance only. Disease management practices vary by region, season, and local regulations. Always follow label instructions and seek advice from a qualified local agricultural expert before applying any treatment. No specific product names or doses are provided intentionally.",
+    "expert_review_pending": true
+  },
+  "diseases": [
+    {
+      "id": "bacterial_spot",
+      "display_name": "Bacterial Spot",
+      "pathogen": "Xanthomonas vesicatoria / X. euvesicatoria (bacteria)",
+      "expert_review_flag": true,
+      "summary": "Bacterial disease causing dark, water-soaked spots on leaves, stems, and fruit. Spreads rapidly in warm, wet conditions.",
+      "symptoms": [
+        "Small, dark brown to black water-soaked spots on leaves",
+        "Spots often have yellow halos",
+        "Leaf edges may appear ragged or torn",
+        "Raised, scab-like lesions on green fruit",
+        "Severe infection causes defoliation"
+      ],
+      "favorable_conditions": [
+        "Warm temperatures (24–30°C)",
+        "High humidity and frequent rain or overhead irrigation",
+        "Plant wounds from pruning or insects"
+      ],
+      "management": {
+        "cultural": [
+          "Use certified disease-free or treated seeds [S01, S07]",
+          "Avoid overhead irrigation; use drip irrigation where possible [S02, S07]",
+          "Remove and destroy infected plant debris after harvest [S01, S06]",
+          "Rotate crops — avoid tomato and pepper in the same field for at least 2 years [S03, S07]",
+          "Stake and prune plants to improve airflow [S02]",
+          "Avoid working in the field when foliage is wet [S05]"
+        ],
+        "biological": [
+          "Copper-based bactericides (copper hydroxide, copper oxychloride) applied preventively can reduce spread — follow local extension recommendations for timing and number of applications [S01, S02, S03]",
+          "Note: copper resistance in Xanthomonas has been reported; consult your local KVK or extension officer [S06]"
+        ],
+        "chemical_groups": [
+          "Copper-based compounds (copper hydroxide, copper oxychloride, copper sulfate) — apply preventively [S01, S02, S03]",
+          "Always follow the label and local advice; resistance management is important [S06]"
+        ],
+        "resistant_varieties": "Several bacterial spot-tolerant tomato varieties are available; consult your local seed supplier or KVK [S01, S07]"
+      },
+      "sources_used": ["S01", "S02", "S03", "S05", "S06", "S07"]
+    },
+    {
+      "id": "early_blight",
+      "display_name": "Early Blight",
+      "pathogen": "Alternaria solani (fungus)",
+      "expert_review_flag": true,
+      "summary": "Common fungal disease producing characteristic concentric-ring ('target') lesions on older leaves first. Can cause significant defoliation and fruit loss.",
+      "symptoms": [
+        "Dark brown spots with concentric rings (target-board pattern) on older/lower leaves",
+        "Yellow (chlorotic) area surrounding lesions",
+        "Lesions on stems appear dark and sunken",
+        "Fruit lesions are dark, leathery, and sunken near the stem end",
+        "Defoliation progresses upward from older leaves"
+      ],
+      "favorable_conditions": [
+        "Warm temperatures (24–29°C)",
+        "Alternating wet and dry periods",
+        "Plant stress (nutrient deficiency, drought, heavy fruit load)"
+      ],
+      "management": {
+        "cultural": [
+          "Remove and destroy infected leaves and crop debris [S01, S02]",
+          "Avoid overhead irrigation; water at the base of the plant [S03]",
+          "Maintain adequate plant nutrition, especially nitrogen and potassium [S05, S07]",
+          "Mulch to reduce soil splash onto lower leaves [S02, S03]",
+          "Crop rotation with non-solanaceous crops for 2–3 years [S01, S07]",
+          "Stake plants to improve airflow [S02]"
+        ],
+        "biological": [
+          "Trichoderma-based biocontrol agents can be used as soil drenches or seed treatments — available through ICAR-recommended formulations [S07, S09]"
+        ],
+        "chemical_groups": [
+          "Mancozeb (dithiocarbamate group) — broad-spectrum protectant [S01, S02]",
+          "Chlorothalonil (chloronitrile group) — protectant [S03, S05]",
+          "Azoxystrobin or other strobilurins — systemic; use in rotation with other groups to avoid resistance [S02, S06]",
+          "Always follow the label and local advice for number of applications and pre-harvest intervals [S01]"
+        ],
+        "resistant_varieties": "Moderate resistance available in some varieties; check with local seed suppliers or ICAR recommendations [S01, S07]"
+      },
+      "sources_used": ["S01", "S02", "S03", "S05", "S06", "S07", "S09"]
+    },
+    {
+      "id": "late_blight",
+      "display_name": "Late Blight",
+      "pathogen": "Phytophthora infestans (oomycete)",
+      "expert_review_flag": true,
+      "summary": "Highly destructive water-mould disease capable of destroying an entire crop within days under favorable conditions. The same pathogen caused the Irish Potato Famine.",
+      "symptoms": [
+        "Large, irregular, pale green to brown water-soaked lesions on leaves",
+        "White, powdery/downy sporulation visible on the underside of lesions in humid conditions",
+        "Dark brown, greasy lesions on stems",
+        "Brown, firm, greasy rot on fruit — may have white mold on surface",
+        "Rapid collapse and death of affected tissue"
+      ],
+      "favorable_conditions": [
+        "Cool temperatures (10–24°C) combined with high humidity (>90%)",
+        "Wet, foggy, or overcast weather",
+        "Poor airflow within the canopy"
+      ],
+      "management": {
+        "cultural": [
+          "Remove and destroy infected plant material immediately — do not compost [S02, S05]",
+          "Avoid overhead irrigation [S03]",
+          "Space plants adequately and stake to improve airflow [S02]",
+          "Scout fields frequently during cool, wet weather [S05, S06]",
+          "Avoid planting near potato fields [S06]",
+          "Destroy volunteer tomato and potato plants [S03]"
+        ],
+        "biological": [
+          "Copper-based fungicides have some activity and can be used in an IPM program — apply preventively when conditions favor the disease [S01, S03]"
+        ],
+        "chemical_groups": [
+          "Copper-based compounds (copper hydroxide, copper oxychloride) — protectant, apply preventively [S01, S02]",
+          "Mancozeb (dithiocarbamate) — protectant [S01, S03]",
+          "Metalaxyl or mefenoxam (phenylamide group) — systemic; MUST be rotated with other groups to prevent resistance [S02, S06]",
+          "Mandipropamid or dimethomorph (CAA group) — systemic [S06]",
+          "Always follow the label and local advice; resistance to metalaxyl is widespread in some regions [S06]"
+        ],
+        "resistant_varieties": "Varieties with Ph-2 and Ph-3 genes offer partial resistance; consult your local seed supplier or ICAR recommendations [S01, S07]"
+      },
+      "sources_used": ["S01", "S02", "S03", "S05", "S06", "S07"]
+    },
+    {
+      "id": "leaf_mold",
+      "display_name": "Leaf Mold",
+      "pathogen": "Passalora fulva / Cladosporium fulvum (fungus)",
+      "expert_review_flag": true,
+      "summary": "Fungal disease mainly affecting leaves; most problematic in greenhouse and high-humidity conditions. Causes yield loss through defoliation.",
+      "symptoms": [
+        "Pale green or yellow spots on the upper leaf surface",
+        "Olive-green to brown or purple-grey velvety mold on the underside of leaves",
+        "Infected leaves curl, turn brown, and drop",
+        "Rarely affects fruit directly in the field"
+      ],
+      "favorable_conditions": [
+        "High relative humidity (>85%)",
+        "Moderate temperatures (21–24°C)",
+        "Poor ventilation — especially in greenhouse or poly-house cultivation"
+      ],
+      "management": {
+        "cultural": [
+          "Improve ventilation in greenhouses and poly-houses [S02, S06]",
+          "Avoid overhead irrigation; reduce leaf wetness duration [S03]",
+          "Remove and destroy infected leaves [S02]",
+          "Keep plant density adequate to allow airflow [S06]",
+          "Sanitize greenhouse structures between crops [S02]"
+        ],
+        "biological": [
+          "Biocontrol agents based on Trichoderma or Bacillus subtilis may help as part of an IPM program [S07, S09]"
+        ],
+        "chemical_groups": [
+          "Mancozeb (dithiocarbamate) — protectant [S01]",
+          "Chlorothalonil (chloronitrile) — protectant [S03]",
+          "Strobilurin group (e.g., azoxystrobin) — systemic; rotate to avoid resistance [S06]",
+          "Always follow the label and local advice [S01]"
+        ],
+        "resistant_varieties": "Varieties with Cf resistance genes are available and highly effective; consult your local seed supplier [S02, S06]"
+      },
+      "sources_used": ["S01", "S02", "S03", "S06", "S07", "S09"]
+    },
+    {
+      "id": "septoria_leaf_spot",
+      "display_name": "Septoria Leaf Spot",
+      "pathogen": "Septoria lycopersici (fungus)",
+      "expert_review_flag": true,
+      "summary": "Common fungal disease causing numerous small circular spots, leading to defoliation from the bottom of the plant upward. Can significantly reduce fruit quality.",
+      "symptoms": [
+        "Numerous small, circular spots (3–6 mm) with dark brown margins and lighter grey centres",
+        "Tiny black dots (pycnidia — fungal fruiting bodies) visible in the centre of spots",
+        "Affects lower/older leaves first; progresses upward",
+        "Severely affected leaves turn yellow and drop",
+        "Does not typically infect fruit directly"
+      ],
+      "favorable_conditions": [
+        "Warm temperatures (20–25°C)",
+        "Extended periods of leaf wetness",
+        "High humidity and frequent rain"
+      ],
+      "management": {
+        "cultural": [
+          "Remove and destroy infected leaves and crop debris [S01, S05]",
+          "Avoid overhead irrigation [S02, S03]",
+          "Mulch to reduce soil splash [S02]",
+          "Crop rotation with non-solanaceous crops [S01, S07]",
+          "Stake plants to improve airflow [S02]",
+          "Avoid working in wet fields [S05]"
+        ],
+        "biological": [
+          "Trichoderma-based products may be used as part of an IPM program [S07, S09]"
+        ],
+        "chemical_groups": [
+          "Mancozeb (dithiocarbamate) — protectant; apply preventively [S01, S02]",
+          "Chlorothalonil (chloronitrile) — protectant [S03, S05]",
+          "Strobilurin group — systemic; rotate to avoid resistance [S06]",
+          "Always follow the label and local advice [S01]"
+        ],
+        "resistant_varieties": "Limited genetic resistance available; focus on cultural controls [S05, S06]"
+      },
+      "sources_used": ["S01", "S02", "S03", "S05", "S06", "S07", "S09"]
+    },
+    {
+      "id": "spider_mites",
+      "display_name": "Spider Mites (Two-spotted Spider Mite)",
+      "pathogen": "Tetranychus urticae (arthropod pest — not a fungal or bacterial disease)",
+      "expert_review_flag": true,
+      "summary": "Tiny sap-sucking mites that cause stippling and bronzing of leaves. Not a disease but included because PlantVillage includes them in tomato disease classification.",
+      "symptoms": [
+        "Fine stippling (tiny pale dots) on the upper leaf surface",
+        "Leaves turn pale, bronze, or silvery",
+        "Fine webbing on undersides of leaves and between leaves",
+        "Severe infestations cause leaf drop and plant decline",
+        "Tiny moving dots (mites) visible on undersides of leaves with a hand lens"
+      ],
+      "favorable_conditions": [
+        "Hot, dry weather (>27°C)",
+        "Dusty conditions",
+        "Drought stress",
+        "Overuse of broad-spectrum pesticides that kill natural enemies"
+      ],
+      "management": {
+        "cultural": [
+          "Monitor fields regularly, especially during hot, dry spells [S02, S07]",
+          "Maintain adequate irrigation to reduce plant stress [S02]",
+          "Remove heavily infested leaves [S05]",
+          "Avoid excessive nitrogen fertilization which promotes lush growth favorable to mites [S03]",
+          "Maintain ground cover and weed management to support natural predators [S07]"
+        ],
+        "biological": [
+          "Predatory mites (Phytoseiidae family, e.g., Phytoseiulus persimilis, Neoseiulus californicus) are natural enemies and effective biocontrol agents [S02, S07]",
+          "Neem-based products (azadirachtin) have miticidal activity and are compatible with natural enemies [S01, S07]",
+          "Releasing or conserving predatory mites is recommended in IPM programs [S07]"
+        ],
+        "chemical_groups": [
+          "Abamectin (avermectin group) — miticide/insecticide; use judiciously to preserve natural enemies [S02, S03]",
+          "Spiromesifen or bifenazate — specific miticides; rotate groups to prevent resistance [S06]",
+          "Avoid broad-spectrum organophosphates and pyrethroids where possible — they kill natural predators [S07]",
+          "Always follow the label and local advice [S01]"
+        ],
+        "resistant_varieties": "No commercially available spider mite-resistant tomato varieties; management relies on cultural and biological controls [S03]"
+      },
+      "sources_used": ["S01", "S02", "S03", "S05", "S06", "S07"]
+    },
+    {
+      "id": "target_spot",
+      "display_name": "Target Spot",
+      "pathogen": "Corynespora cassiicola (fungus)",
+      "expert_review_flag": true,
+      "summary": "Fungal disease producing concentric-ring lesions similar to early blight but with distinguishing features. Can affect leaves, stems, and fruit.",
+      "symptoms": [
+        "Brown spots with concentric rings (target pattern) on leaves",
+        "Spots lack the distinct yellow halo typical of early blight",
+        "Dark brown, sunken lesions on stems and petioles",
+        "Dark brown, slightly sunken lesions on fruit",
+        "Defoliation under severe infection"
+      ],
+      "favorable_conditions": [
+        "High humidity and temperatures between 24–32°C",
+        "Extended leaf wetness periods",
+        "Dense canopy with poor airflow"
+      ],
+      "management": {
+        "cultural": [
+          "Remove and destroy infected plant debris [S02, S08]",
+          "Avoid overhead irrigation [S03]",
+          "Stake and prune to improve airflow [S02]",
+          "Crop rotation with non-solanaceous crops [S08]",
+          "Mulch to reduce soil splash [S02]"
+        ],
+        "biological": [
+          "Trichoderma-based biocontrol agents may provide some suppression as part of an IPM program [S07, S09]"
+        ],
+        "chemical_groups": [
+          "Mancozeb (dithiocarbamate) — protectant [S08]",
+          "Chlorothalonil (chloronitrile) — protectant [S08]",
+          "Strobilurin group — systemic; rotate to avoid resistance [S06, S08]",
+          "Always follow the label and local advice [S01]"
+        ],
+        "resistant_varieties": "Limited information on resistant varieties; cultural management is the primary strategy [S08]"
+      },
+      "sources_used": ["S01", "S02", "S03", "S06", "S07", "S08", "S09"]
+    },
+    {
+      "id": "yellow_leaf_curl_virus",
+      "display_name": "Tomato Yellow Leaf Curl Virus (TYLCV)",
+      "pathogen": "Tomato yellow leaf curl virus (begomovirus, transmitted by Bemisia tabaci whitefly)",
+      "expert_review_flag": true,
+      "summary": "Devastating viral disease transmitted by whiteflies. No cure once a plant is infected; management focuses on preventing infection and controlling the whitefly vector.",
+      "symptoms": [
+        "Upward curling and cupping of young leaves",
+        "Yellowing (chlorosis) of leaf margins and between veins",
+        "Stunted plant growth",
+        "Reduced leaf size",
+        "Flowers may drop; fruit set severely reduced if infection occurs early",
+        "Silvery-white whiteflies visible on undersides of leaves"
+      ],
+      "favorable_conditions": [
+        "High whitefly (Bemisia tabaci) populations",
+        "Warm, dry conditions that favor whitefly multiplication",
+        "Presence of infected host plants near the field"
+      ],
+      "management": {
+        "cultural": [
+          "Use certified TYLCV-resistant or tolerant varieties — this is the most effective long-term strategy [S01, S07]",
+          "Use reflective silver or yellow sticky traps to monitor and reduce whitefly populations [S02, S07]",
+          "Use insect-proof netting in nurseries to raise healthy transplants [S01, S07]",
+          "Rogue out and destroy infected plants as soon as symptoms appear — do not leave them in the field [S02, S07]",
+          "Remove crop debris immediately after harvest [S01]",
+          "Avoid planting near older tomato crops or other whitefly host plants [S06, S07]",
+          "Plant border crops (such as maize or sorghum) as physical barriers [S07]"
+        ],
+        "biological": [
+          "Natural enemies of whiteflies (parasitic wasps such as Encarsia formosa, predatory beetles) can be conserved or released as biocontrol [S07]",
+          "Neem-based products reduce whitefly populations and are compatible with natural enemies [S01, S07]"
+        ],
+        "chemical_groups": [
+          "Neonicotinoid group (e.g., imidacloprid, thiamethoxam) — systemic insecticides against whitefly; use judiciously due to resistance and pollinator concerns [S02, S07]",
+          "Pyrethroid group — contact insecticide; rotation recommended to manage resistance [S07]",
+          "NOTE: Insecticides control the vector (whitefly) but cannot cure infected plants [S01, S02]",
+          "Always follow the label and local advice; whitefly resistance to insecticides is a growing problem [S06, S07]"
+        ],
+        "resistant_varieties": "TYLCV-resistant varieties are strongly recommended and are the most effective management tool; consult your local seed supplier or ICAR/SAU recommendations [S01, S07]"
+      },
+      "sources_used": ["S01", "S02", "S06", "S07"]
+    },
+    {
+      "id": "tomato_mosaic_virus",
+      "display_name": "Tomato Mosaic Virus (ToMV)",
+      "pathogen": "Tomato mosaic virus (tobamovirus, mechanically transmitted)",
+      "expert_review_flag": true,
+      "summary": "Highly stable virus that spreads through contact, tools, and infected plant material. No cure; management focuses on prevention and sanitation.",
+      "symptoms": [
+        "Mosaic pattern of light and dark green on leaves",
+        "Leaf distortion, curling, and puckering",
+        "Stunted plant growth",
+        "Mottled or streaked fruit",
+        "Fruit may show internal browning",
+        "Symptoms may be mild in some conditions"
+      ],
+      "favorable_conditions": [
+        "Handling plants without sanitation (virus spreads easily on hands, tools, clothing)",
+        "Use of infected seed",
+        "Presence of infected weed hosts near the field",
+        "Tobacco use by field workers (tobacco may carry related tobamoviruses)"
+      ],
+      "management": {
+        "cultural": [
+          "Use certified virus-free or heat-treated seed [S01, S02]",
+          "Wash hands thoroughly with soap before handling plants and between rows [S02, S05]",
+          "Disinfect tools and equipment between plants (10% bleach solution or appropriate disinfectant) [S02, S05]",
+          "Remove and destroy infected plants immediately [S01, S05]",
+          "Control weed hosts in and around the field [S07]",
+          "Avoid tobacco products near tomato plants [S05, S06]",
+          "Do not save seed from infected plants [S02]"
+        ],
+        "biological": [
+          "No effective biological control agents available; prevention through sanitation is essential [S05, S06]"
+        ],
+        "chemical_groups": [
+          "No chemical treatments are effective against the virus itself [S05, S06]",
+          "Management is entirely through cultural and sanitation practices [S01, S02]"
+        ],
+        "resistant_varieties": "Varieties with Tm-2 and Tm-2a genes offer good resistance to ToMV; consult your local seed supplier or ICAR/SAU recommendations [S01, S02, S07]"
+      },
+      "sources_used": ["S01", "S02", "S05", "S06", "S07"]
+    },
+    {
+      "id": "healthy",
+      "display_name": "Healthy",
+      "pathogen": null,
+      "expert_review_flag": false,
+      "summary": "No disease detected. The leaf appears healthy.",
+      "symptoms": [],
+      "favorable_conditions": [],
+      "management": {
+        "cultural": [
+          "Continue regular scouting (at least twice a week) for early disease detection [S02, S07]",
+          "Maintain balanced nutrition and irrigation [S01, S07]",
+          "Keep records of any unusual symptoms for early intervention [S07]"
+        ],
+        "biological": [],
+        "chemical_groups": [],
+        "resistant_varieties": "Using disease-resistant varieties is recommended as a preventive measure for all major tomato diseases [S01, S07]"
+      },
+      "sources_used": ["S01", "S02", "S07"]
+    }
+  ]
+}
