@@ -33,6 +33,7 @@
     "quality_too_dark": "The photo is too dark. Please take it in good light.",
     "quality_too_bright": "The photo is too bright. Please avoid harsh direct sunlight.",
     "quality_blank": "No leaf is visible in the photo.",
+    "quality_invalid_file": "The file could not be read as a photo. Please upload a JPG or PNG image.",
     "section_symptoms": "Symptoms",
     "section_conditions": "Favourable conditions",
     "section_cultural": "Cultural practices",

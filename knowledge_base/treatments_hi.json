@@ -33,6 +33,7 @@
     "quality_too_dark": "फोटो बहुत अंधेरी है। कृपया अच्छी रोशनी में लें।",
     "quality_too_bright": "फोटो बहुत चमकीली है। सीधी तेज़ धूप से बचें।",
     "quality_blank": "फोटो में पत्ता दिखाई नहीं दे रहा।",
+    "quality_invalid_file": "फ़ाइल को फोटो के रूप में पढ़ा नहीं जा सका। कृपया JPG या PNG फोटो अपलोड करें।",
     "section_symptoms": "लक्षण",
     "section_conditions": "अनुकूल परिस्थितियाँ",
     "section_cultural": "कृषि संबंधी उपाय",

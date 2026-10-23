@@ -15,3 +15,4 @@ runs/
 reports/ood/cache/
 
 models/*.npz
+reports/app_smoke/
