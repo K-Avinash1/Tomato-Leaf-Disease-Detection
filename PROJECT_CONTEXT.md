@@ -1,8 +1,8 @@
 # Project Context
 
 **Project:** Tomato Leaf Disease Detection and Treatment Recommendation Using Deep Learning
-**Current phase:** Phase 19 (Grad-CAM)
-**Completed phases:** Phases 1 to 18
+**Current phase:** Phase 22
+**Completed phases:** Phases 1 to 21
 **Random seed:** 42
 
 ## Environment
@@ -59,3 +59,5 @@ Quality checks: min side 160 px, sharpness 29.25, too bright p5 > 117, too dark 
 Calibration: raw confidence shown (temperature not adopted). All 4,724 validation+test predictions with confidence >= 0.95 were correct; below 0.95, 19 errors in 76 images. Overconfident on damaged images (blur sigma 2: confidence 82%, accuracy 56%).
 
 Grad-CAM: correct predictions mostly focus on the leaf (relative background focus 0.68, mixed); test errors more background-focused (0.83); potato late blight accepted by the gate is read through its lesion (0.54). Black background turns 33.8% of other-class validation leaves into Late Blight predictions (test a); dark Late Blight is kept 90.9% on grey (test b). Both tests use a rough leaf mask.
+
+Grad-CAM: relative background focus 0.68 (errors 0.83). Replacing the background with flat grey or black drops accuracy to 28.5% / 44.1% and raises Late Blight predictions to 38.2% / 33.8% (no black-specific shortcut shown; the edit method is rough). The gate marks 97-100% of such images unsupported; 11/526 black-background images wrongly accepted as Late Blight. Behaviour on real dark-background photos unknown.
