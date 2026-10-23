@@ -1,9 +1,12 @@
-"""Tomato leaf disease API.   Start with:  uvicorn app.main:app --reload   then open http://127.0.0.1:8000/docs"""
+"""Tomato leaf disease app.   Start with:  uvicorn app.main:app --reload
+The web page is at http://127.0.0.1:8000/   and the developer test page for the API is at /docs"""
 from contextlib import asynccontextmanager
+from pathlib import Path
 from typing import Literal
 
 from fastapi import FastAPI, File, Form, HTTPException, UploadFile
-from fastapi.responses import RedirectResponse
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 
 from app.schemas import Health, PredictResponse
 from src.inference.loader import load_engine
@@ -11,6 +14,7 @@ from src.inference.pipeline import analyze
 from src.knowledge_base.loader import LANGS
 
 MAX_UPLOAD_BYTES = 10 * 1024 * 1024
+STATIC_DIR = Path(__file__).resolve().parent / "static"
 Lang = Literal["en", "hi"]
 
 
@@ -23,9 +27,12 @@ async def lifespan(app):
 app = FastAPI(title="Tomato Leaf Disease Detection and Treatment Recommendation", version="0.1.0", lifespan=lifespan)
 
 
+app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
+
+
 @app.get("/", include_in_schema=False)
-def root():
-    return RedirectResponse("/docs")
+def index():
+    return FileResponse(STATIC_DIR / "index.html", headers={"Cache-Control": "no-cache"})
 
 
 @app.get("/health", response_model=Health)
